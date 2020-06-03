@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteRule ^(\w+)\.JPG$ watermark.php?image=$1&ext=JPG [L]
+RewriteRule ^(\w+)\.JPEG$ watermark.php?image=$1&ext=JPEG [L]
+RewriteRule ^(\w+)\.jpg$ watermark.php?image=$1&ext=jpg [L]
+RewriteRule ^(\w+)\.jpeg$ watermark.php?image=$1&ext=jpeg [L]
+RewriteRule ^(\w+)\.png$ watermark.php?image=$1&ext=png [L]
+RewriteRule ^(\w+)\.bmp$ watermark.php?image=$1&ext=bmp [L]

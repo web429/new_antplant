@@ -1,0 +1,195 @@
+﻿body {
+  margin: 20px;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  color: #406397;
+  background-color: #cccccc;
+}
+h1.company {
+	margin: 10px;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 36px;
+	background-color: #336699;
+}
+h1.logo {
+	margin: 10px;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #FFFFFF;
+	font-style: italic;
+	font-size: 20px;
+	background-color: #336699;
+}
+h1.c3soft {
+	margin: 4px;
+	font-family: Tahoma;
+	color: #406397;
+	font-weight: bold;
+	font-size: 26px;
+	text-align: left;
+}
+h1.c3soft_slogan {
+	font-family: arial, Helvetica, sans-serif;
+	color: #406397;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: left;
+	font-style: italic;
+	margin-top: 4px;
+	margin-right: 4px;
+	margin-bottom: 20px;
+	margin-left: 4px;
+}
+table.margine {
+	border: 1px solid #999999;
+	background-color: #FFFFFF;
+}
+.table_margine_dr_gri {
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #C0C0C0;
+	background-color: #F0EEEC;
+}
+.table_dr_gri {
+	background-color: #F0EEEC;
+	width: 30px;
+}
+.meniu_div {
+	display: block;
+	width: 150px;
+	height: auto;
+}
+p.meniu_grup {
+	margin: 10px 10px 5px 25px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	color: #003366;
+	font-weight: bold;
+}
+p.meniu_id {
+	margin: 0px;
+	border: 1px solid #F0EEEC;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #003366;
+	font-size: 12px;
+	background-color: #F0EEEC;
+	text-decoration: none;
+	display: block;
+	width: 130px;
+	height: 22px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	line-height: 20px;
+	vertical-align: 4%;
+	text-indent: 10px;
+}
+p.meniu_id a {
+	background-position: 2px 2px;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #F0EEEC;
+	text-decoration: none;
+	color: #003366;
+	display: block;
+	width: 140px;
+	height: 20px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	clip: rect(0px, 0px, 0px, 0px);
+	line-height: 20px;
+	text-indent: 22px;
+	background-repeat: no-repeat;
+}
+p.meniu_id a:hover {
+	border: 1px solid #003366;
+	display: block;
+	text-decoration: none;
+	width: 140px;
+	background-color: #E1F0F7;
+	height: 20px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+p.copyright {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 10px;
+  color: #517dbf;
+  text-align: center;
+}
+p.copyright a {
+  color: #517dbf;
+  text-decoration: none;
+}
+p.copyright a:hover {
+  text-decoration: none;
+  color: #990000;
+}
+p.continut {
+  margin: 10px;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  text-align: justify;
+  color: #517dbf;
+}
+p.continut a {
+	font-family: arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003366;
+	text-decoration: none;
+}
+p.continut a:link {
+	font-family: arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003366;
+	text-decoration: none;
+}
+p.continut a:hover {
+	font-family: arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003366;
+	text-decoration: underline;
+}
+p.continut a:visited {
+	font-family: arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #800000;
+	text-decoration: none;
+}
+p.status {
+	color: #006600;
+	text-indent: 30px;
+}
+.login {
+	border: 1px solid #003366;
+	background-color: #FFFFFF;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: #003366;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+.login a {
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: #003366;
+}
+.login a:hover {
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: underline;
+	color: #003366;
+}
+p {
+	margin: 10px 0px 0px 0px;
+}
