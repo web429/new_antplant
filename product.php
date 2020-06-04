@@ -50,18 +50,23 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
     <!-- Site Icons -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/favicon.png">
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="css/custom.css">
-
+	<!-- Css Styles -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/elegant-icons.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/barfiller.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/slicknav.min.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<!-- Modernizer for Portfolio -->
 	<script src="js/old/vendor/modernizr-2.6.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="shadowbox/shadowbox.css">
-    <!-- Modernizer for Portfolio -->
     <script src="js/modernizer.js"></script>
 
 	
@@ -107,12 +112,13 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 	<style>		
 		.main_img {
 			width: 100%;
-			border-radius: 5%;
+			/* border-radius: 5%; */
 		}
 		.etc_img {
 			width: 30%;
-			border-radius: 5%;
+			/* border-radius: 5%; */
 			margin-top: 10px;
+			margin-left: 10px;
 		}
 		.big-tagline p {
 			font-size: 21px;
@@ -123,15 +129,22 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 		}
 	</style>
     </head>
-	<body class="is-preload">
-	<div id="wrapper">
-		<div id="main">
-			<div class="inner">
-				<?php include "language.php"; ?>
-				<?php include "header.php"; ?>
-				
-				<div class="row">
-					<p style="width:100%;">You are here now: <a class="crumb" href="index.php">Home ></a>
+	<?php include "language.php"; ?>
+	<?php include "header.php"; ?>
+	<!-- Breadcrumb Section Begin -->
+	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
+		<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+				<div class="breadcrumb-text">
+					<?php
+						$queryz1 = mysql_query ( " SELECT * FROM $tab_produse where id='".$_REQUEST['id']."' ");
+						$rowz1 = mysql_fetch_array($queryz1);
+					?>
+					<h3 class="text-center"><?php echo $rowz1['nume_en'];?></h3>
+					<div class="bt-option">
+					<a href="index.php">Home ></a>
 					<a class="crumb" href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1">
 					<?php $queryz = mysql_query( " SELECT * FROM $tab_produse ");
 						?>
@@ -156,8 +169,17 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 					?>
 					</a>
 					<a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1" style="float:right;">View all MACHINES</a>
-					</p>
 				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+	<!-- Breadcrumb Section End -->
+	<body class="is-preload">
+	<div id="wrapper">
+		<div id="main">
+			<div class="inner">
 				<section class="left-image" style="margin-top:20px;">
 					<div class="container-fluid">
 						<div class="row">
@@ -228,10 +250,9 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 				</section>
 			</div>
 		</div>
-		<?php include "sidebar.php"; ?>
 	</div>
     
-        				
+        <?php include "page-footer.php";?>
 		<script type="text/javascript" src="shadowbox/shadowbox.js"></script>
 		<script type="text/javascript">
 		Shadowbox.init();

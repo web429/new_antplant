@@ -10,8 +10,8 @@ if ($_GET['ext'] == 'png') {
 }
 
 // Set the margins for the stamp and get the height/width of the stamp image
-$marge_right = 10;
-$marge_bottom = 10;
+$marge_right = 40;
+$marge_bottom = 40;
 $sx = imagesx($stamp);
 $sy = imagesy($stamp);
 

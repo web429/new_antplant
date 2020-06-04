@@ -54,3 +54,8 @@ $word['readmore_en'] = 'Read More';
 $word['readmore_de'] = 'Weiterlesen';
 $word['readmore_es'] = 'Lee mas';
 $word['readmore_fr'] = "Lire la suite";
+
+$word['ourservice_en'] = 'Our Service';
+$word['ourservice_de'] = 'Unser Service';
+$word['ourservice_es'] = 'Nuestro servicio';
+$word['ourservice_fr'] = "Notre service";
