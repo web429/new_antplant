@@ -30,7 +30,7 @@
 						<li>
 							<a href="#"><?php echo $row[$nume]; ?><i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown">
-								<li href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1">All Categories</li>
+								<li><a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1"><span>All Categories</span></a></li>
 								<?php 
 								$query1 = mysql_query ( " SELECT * FROM $tab_pagini where pagina_parent='999' ORDER BY pagina_id LIMIT 0 , 4 ");
 								$nume1 = "nume_".$lang;
@@ -81,10 +81,7 @@
                     <div class="col-lg-6 col-md-8">
                         <div class="ht-widget">
                             <ul>
-                                <li><i class="fa fa-sun-o"></i> <span>20<sup>c</sup></span> London</li>
-                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                <li class="signup-switch signup-open"><i class="fa fa-sign-out"></i> Login / Sign up
-                                </li>
+                                <li><i class="fa fa-clock-o"></i> Working Hours: Monday - Friday, 9:00 AM ~ 16:00 PM</li>
                             </ul>
                         </div>
                     </div>

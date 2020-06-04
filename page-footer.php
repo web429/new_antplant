@@ -79,8 +79,8 @@
           </div>
           <div class="col-lg-6">
             <div class="ca-links">
-              <a href="#">About</a>
-              <a href="#">Contact</a>
+              <a href="index.php?p=About Us&l=<?php echo $lang;?>">About</a>
+              <a href="index.php?p=Contact&l=<?php echo $lang;?>">Contact</a>
               <a href="#">Support</a>
             </div>
           </div>

@@ -76,6 +76,11 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 </head>
 <?php include "language.php" ?>
 <?php include "header.php" ?>
+<body class="is-preload">
+  <!-- Page Preloder -->
+  <div id="preloder">
+    <div class="loader"></div>
+  </div>
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
   <div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
@@ -236,74 +241,40 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
             <div class="section-title">
               <h5>Best of</h5>
             </div>
-            <div class="bp-item">
-              <div class="bp-loader">
-                <div class="loader-circle-wrap">
-                  <div class="loader-circle">
-                    <span class="circle-progress-1" data-cpid="id-1" data-cpvalue="95" data-cpcolor="#c20000"></span>
-                    <div class="review-point">9.5</div>
+            <?php 
+            $rating = 100;
+            $queryp = mysql_query ( " SELECT * FROM $tab_produse ORDER BY id LIMIT 0, 5");
+            while ( $rowp = mysql_fetch_array($queryp) ) {
+              $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$rowp['id']."' ");
+              $row2 = mysql_fetch_array($query2);
+              $while_cat = $_REQUEST['cat'];
+              $while_id = $rowp['id'];
+              $while_l = $_REQUEST['l'];
+              $rating = $rating - 3;
+              $show_rating = rand($rating, $rating + 3);
+              $pshow_rating = $show_rating / 10;
+            ?>
+              <div class="bp-item">
+                <div class="bp-loader">
+                  <div class="loader-circle-wrap">
+                    <div class="loader-circle">
+                      <span class="circle-progress-1" data-cpid="id-1" data-cpvalue="<?php echo $show_rating;?>" data-cpcolor="#c20000"></span>
+                      <div class="review-point"><?php echo $pshow_rating;?></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="bp-text">
-                <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                <ul>
-                  <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                  <li><i class="fa fa-comment-o"></i> 20</li>
-                </ul>
-              </div>
-            </div>
-            <div class="bp-item">
-              <div class="bp-loader">
-                <div class="loader-circle-wrap">
-                  <div class="loader-circle">
-                    <span class="circle-progress-1" data-cpid="id-2" data-cpvalue="85" data-cpcolor="#c20000"></span>
-                    <div class="review-point">8.5</div>
-                  </div>
+                <div class="bp-text">
+                  <h6><a href="product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>"><?php echo $rowp['nume_en']; ?></a></h6>
+                  <ul>
+                    <li>by <span><?php echo $rowp['make'] ?></span></li>
+                    <li><i class='fa fa-money'></i><?php echo $rowp['price'] ?> &pound;</li>
+                    <li><i class='fa fa-calendar-o'></i><?php echo $rowp['year'] ?></li>
+                  </ul>
                 </div>
               </div>
-              <div class="bp-text">
-                <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                <ul>
-                  <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                  <li><i class="fa fa-comment-o"></i> 20</li>
-                </ul>
-              </div>
-            </div>
-            <div class="bp-item">
-              <div class="bp-loader">
-                <div class="loader-circle-wrap">
-                  <div class="loader-circle">
-                    <span class="circle-progress-1" data-cpid="id-3" data-cpvalue="80" data-cpcolor="#c20000"></span>
-                    <div class="review-point">8.0</div>
-                  </div>
-                </div>
-              </div>
-              <div class="bp-text">
-                <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                <ul>
-                  <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                  <li><i class="fa fa-comment-o"></i> 20</li>
-                </ul>
-              </div>
-            </div>
-            <div class="bp-item">
-              <div class="bp-loader">
-                <div class="loader-circle-wrap">
-                  <div class="loader-circle">
-                    <span class="circle-progress-1" data-cpid="id-4" data-cpvalue="75" data-cpcolor="#c20000"></span>
-                    <div class="review-point">7.5</div>
-                  </div>
-                </div>
-              </div>
-              <div class="bp-text">
-                <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                <ul>
-                  <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                  <li><i class="fa fa-comment-o"></i> 20</li>
-                </ul>
-              </div>
-            </div>
+            <?php
+            }
+            ?>
           </div>
         </div>
       </div>

@@ -533,7 +533,7 @@ ol {
 }
 
 .humberger-menu-wrapper .hw-menu {
-	/* display: none; */
+	display: none;
 }
 
 .humberger-menu-wrapper .hw-menu ul li {
@@ -2229,6 +2229,29 @@ ol {
 }
 
 .footer-about .subscribe-option form button span {
+	display: inline-block;
+	-webkit-transform: skewX(15deg);
+	-ms-transform: skewX(15deg);
+	transform: skewX(15deg);
+}
+
+.kill-btn {
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #eaeaea;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	background: #680606;
+	border: none;
+	width: 70%;
+	padding: 12px 0;
+	-webkit-transform: skewX(-15deg);
+	-ms-transform: skewX(-15deg);
+	transform: skewX(-15deg);
+}
+
+.kill-btn span {
 	display: inline-block;
 	-webkit-transform: skewX(15deg);
 	-ms-transform: skewX(15deg);

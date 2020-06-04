@@ -59,60 +59,66 @@ if(isset($_POST['submit'])) {
 		}
 		#map {
 			width: 100%;
-			height: 400px;
+			height: 250px;
 			background-color: grey;
 			border: 1px solid gray;
 		}
 	</style>
-	<div class="page-heading">
-		<div class="container-fluid">
+	<!-- Breadcrumb Section Begin -->
+	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
+		<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
+			<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<h1><?php echo $word['contactus_'.$lang];?></h1>
+				<div class="col-lg-12">
+				<div class="breadcrumb-text">
+					<h3 class="text-center"><?php echo $word['contactus_'.$lang];?></h3>
+					<div class="bt-option text-center">
+						<a href="index.php">Home</a>
+						<a href="#" class="danger">Contact</a>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-7 col-sm-12">
-					<div id="map"></div>
-				</div>
-				<div class="col-md-5 col-sm-12">
-					<p><?php echo $row[$continut]; ?></p>
-				</div>
 			</div>
-			<form id="contactform" action="index.php?p=<? echo $_REQUEST['p'] ?>&l=<?php echo $_REQUEST['l'] ?>" method="post">
-				<div class="row">
-					<div class="col-md-6">
-						<fieldset>
-							<input name="contactname" type="text" class="form-control" id="contactname" placeholder="Your name..." required="">
-						</fieldset>
-					</div>
-					<div class="col-md-6">
-						<fieldset>
-							<input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
-						</fieldset>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<fieldset>
-							<input name="telephone" type="text" class="form-control" id="telephone" placeholder="Your phone number...">
-						</fieldset>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<textarea name="message" id="message" placeholder="Give us more details..." rows="6" style="width:100%;padding:.375rem .75rem;"></textarea>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8 col-sm-12"></div>
-					<div class="col-md-4 col-sm-12">
-						<button type="submit" id="form-submit" class="button" style="width:100%;">Send Message</button>
-					</div>
-				</div>
-			</form>
-		</div>
 	</div>
+	</section>
+<!-- Breadcrumb Section End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+					<div class="row">
+						<div class="col-md-7 col-sm-12">
+							<div id="map"></div>
+						</div>
+						<div class="col-md-5 col-sm-12">
+							<p><?php echo $row[$continut]; ?></p>
+						</div>
+					</div>
+                    <div class="contact-text">
+                        <div class="contact-title">
+                            <h3><?php echo $word['contactus_'.$lang];?></h3>
+                            <p>We are always waiting for your quotes</p>
+                        </div>
+                        <div class="contact-form">
+                            <div class="dt-leave-comment">
+                                <form id="contactform" action="index.php?p=<? echo $_REQUEST['p'] ?>&l=<?php echo $_REQUEST['l'] ?>" method="post">
+                                    <div class="input-list">
+                                        <input name="contactname" type="text" placeholder="Name">
+                                        <input name="email" type="text" placeholder="Email">
+                                        <input name="telephone" type="text" placeholder="Phone Number">
+                                    </div>
+                                    <textarea name="message" placeholder="Give us more detail..."></textarea>
+                                    <button type="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <script>
     // Initialize and add the map
     function initMap() {
