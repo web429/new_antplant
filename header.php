@@ -50,7 +50,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="hw-copyright">
-            Copyright © 2020 freelancer.com All rights reserved
+            Copyright © 2020 All rights reserved
         </div>
         <div class="hw-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -100,7 +100,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                       <a href="./index.html"><img src="assets/img/logo.png" alt=""></a>
+                       <a href="index.php?l=<?php echo $_REQUEST['l'] ?>"><img src="assets/img/logo.png" alt=""></a>
                     </div>
                 </div>
             </div>
