@@ -107,10 +107,10 @@
       <div class="row">
         <div class="col-lg-6 col-md-6">
           <div class="hs-text">
-            <div class="label"><span>Ant Plant ltd.</span></div>
+            <div class="label"><span>SUNWELL UK LTD.</span></div>
             <h2 style="color:black;-webkit-text-stroke: 1px white;text-shadow:1px 1px 2px gray;font-weight:800;">
               <strong>Welcome To
-                <em>ANT Plant Ltd</em>.</strong></h2>
+                <em>SUNWELL UK LTD</em>.</strong></h2>
             <div class="slider-text">
               <p><?php echo $textForCarousel; ?></p>
             </div>
@@ -291,7 +291,7 @@
                                 $strDisplay .= "
                                   <div class='cl-item'>
                                     <div class='cl-pic'>
-                                      <img src='upload/".$row2['numefisier']."' alt='ANT PLANT LTD'>
+                                      <img src='upload/".$row2['numefisier']."' alt='SUNWELL UK LTD'>
                                     </div>
                                     <div class='cl-text'>
                                         <div class='label'><span>".$row['model']."</span></div>
