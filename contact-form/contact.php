@@ -123,7 +123,7 @@ if(isset($_POST['submit'])) {
     // Initialize and add the map
     function initMap() {
         // The location of Uluru
-        var uluru = {lat: 54.7506958, lng: -1.6049426};
+        var uluru = {lat: 53.7841137, lng: -2.7898546};
         // The map, centered at Uluru
         var map = new google.maps.Map(
             document.getElementById('map'), {zoom: 16, center: uluru});
