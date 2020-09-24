@@ -1,10 +1,10 @@
 /*  ---------------------------------------------------
-    Template Name: Amin
-    Description:  Amin magazine HTML Template
-    Author: Colorlib
-    Author URI: https://colorlib.com
-    Version: 1.0
-    Created: Colorlib
+  Template Name: Dreams
+  Description:  Dreams Car Driving HTML Template
+  Author: Colorlib
+  Author URI: https://colorlib.com
+  Version: 1.0
+  Created: Colorlib
 ---------------------------------------------------------  */
 
 'use strict';
@@ -26,6 +26,79 @@
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
     });
+
+    //Canvas Menu
+    $(".canvas__open").on('click', function () {
+        $(".offcanvas-menu-wrapper").addClass("active");
+        $(".offcanvas-menu-overlay").addClass("active");
+    });
+
+    $(".offcanvas-menu-overlay").on('click', function () {
+        $(".offcanvas-menu-wrapper").removeClass("active");
+        $(".offcanvas-menu-overlay").removeClass("active");
+    });
+
+     //Search Switch
+     $('.search-switch').on('click',function() {
+        $('.search-model').fadeIn(400);
+    });
+
+    $('.search-close-switch').on('click',function() {
+        $('.search-model').fadeOut(400,function() {
+            $('#search-input').val('');
+        });
+    });
+
+    /*------------------
+		Navigation
+	--------------------*/
+    $(".mobile-menu").slicknav({
+        prependTo: '#mobile-menu-wrap',
+        allowParentLinks: true
+    });
+
+    /*------------------
+        Accordin Active
+    --------------------*/
+    $('.collapse').on('shown.bs.collapse', function () {
+        $(this).prev().addClass('active');
+    });
+
+    $('.collapse').on('hidden.bs.collapse', function () {
+        $(this).prev().removeClass('active');
+    });
+    
+    /*--------------------------
+        Testimonial Slider
+    ----------------------------*/
+    var testimonialSlider = $(".testimonial__slider");
+    testimonialSlider.owlCarousel({
+        loop: true,
+        margin: 0,
+        items: 1,
+        dots: true,
+        smartSpeed: 1200,
+        autoHeight: false,
+        autoplay: false
+    });
+
+    /*------------------
+		Magnific
+	--------------------*/
+    $('.video-popup').magnificPopup({
+        type: 'iframe'
+    });
+
+    /*--------------------------
+        Select
+    ----------------------------*/
+    $("select").niceSelect();
+
+    /*--------------------------
+        Datepicker
+    ----------------------------*/
+    $( ".datepicker_pop" ).datepicker();
+
 
     // Humberger Menu
     $(".humberger-open").on('click', function () {
@@ -58,14 +131,6 @@
 
     $('.signup-close').on('click', function () {
         $('.signup-section').fadeOut(400);
-    });
-
-    /*------------------
-		Navigation
-	--------------------*/
-    $(".mobile-menu").slicknav({
-        prependTo: '#mobile-menu-wrap',
-        allowParentLinks: true
     });
 
     /*------------------
@@ -119,13 +184,13 @@
                 items: 1
             },
             480: {
-                items: 2
+                items: 1
             },
             768: {
-                items: 3
+                items: 2
             },
             992: {
-                items: 4
+                items: 3
             }
         }
     });
@@ -177,13 +242,6 @@
     });
 
     /*------------------
-        Video Popup
-    --------------------*/
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-    });
-
-    /*------------------
         Barfiller
     --------------------*/
     $('#bar-1').barfiller({
@@ -222,9 +280,8 @@
         $(this).append('<div class="' + cpid + '"></div><div class="progress-value"></div>');
 
         if (cpvalue < 100) {
-
             $('.' + cpid).circleProgress({
-                value: '0.' + cpvalue,
+                value: cpvalue / 10,
                 size: 40,
                 thickness: 2,
                 startAngle: -190,
@@ -250,9 +307,8 @@
         $(this).append('<div class="' + cpid + '"></div><div class="progress-value"></div>');
 
         if (cpvalue < 100) {
-
             $('.' + cpid).circleProgress({
-                value: '0.' + cpvalue,
+                value: cpvalue / 100,
                 size: 60,
                 thickness: 2,
                 startAngle: -190,

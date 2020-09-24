@@ -55,70 +55,72 @@ if(isset($_POST['submit'])) {
 ?>
 	<style>
 		.row {
-			margin-bottom: 20px;
+			/* margin-bottom: 20px; */
 		}
 		#map {
 			width: 100%;
-			height: 250px;
+			height: 450px;
 			background-color: grey;
 			border: 1px solid gray;
 		}
 	</style>
-	<!-- Breadcrumb Section Begin -->
-	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
-		<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-				<div class="breadcrumb-text">
-					<h3 class="text-center"><?php echo $word['contactus_'.$lang];?></h3>
-					<div class="bt-option text-center">
-						<a href="index.php">Home</a>
-						<a href="#" class="danger">Contact</a>
-					</div>
-				</div>
-			</div>
-			</div>
-	</div>
-	</section>
-<!-- Breadcrumb Section End -->
 
-    <!-- Contact Section Begin -->
-    <section class="contact-section spad">
+	<!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-					<div class="row">
-						<div class="col-md-7 col-sm-12">
-							<div id="map"></div>
-						</div>
-						<div class="col-md-5 col-sm-12">
-							<p><?php echo $row[$continut]; ?></p>
-						</div>
-					</div>
-                    <div class="contact-text">
-                        <div class="contact-title">
-                            <h3><?php echo $word['contactus_'.$lang];?></h3>
-                            <p>We are always waiting for your quotes</p>
-                        </div>
-                        <div class="contact-form">
-                            <div class="dt-leave-comment">
-                                <form id="contactform" action="index.php?p=<? echo $_REQUEST['p'] ?>&l=<?php echo $_REQUEST['l'] ?>" method="post">
-                                    <div class="input-list">
-                                        <input name="contactname" type="text" placeholder="Name">
-                                        <input name="email" type="text" placeholder="Email">
-                                        <input name="telephone" type="text" placeholder="Phone Number">
-                                    </div>
-                                    <textarea name="message" placeholder="Give us more detail..."></textarea>
-                                    <button type="submit">Submit</button>
-                                </form>
-                            </div>
-                        </div>
+                    <div class="breadcrumb__links">
+                        <a href="index.php"><i class="fa fa-home"></i> Home</a>
+                        <span><?php echo $word['contactus_'.$lang];?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- Breadcrumb End -->
+	
+	<!-- Map Section Begin -->
+    <div class="map container">
+	<div id="map"></div>
+    </div>
+	<!-- Map Section End -->
+	
+	
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="contact__address">
+						<h4>Contact info</h4>
+						<?php echo $row[$continut]; ?>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="contact__form">
+						<h4>Leave a message</h4>
+						<form id="contactform" action="index.php?p=<? echo $_REQUEST['p'] ?>&l=<?php echo $_REQUEST['l'] ?>" method="post">
+							<div class="row">
+								<div class="col-lg-6">
+									<input name="contactname" type="text" placeholder="Name">
+								</div>
+								<div class="col-lg-6">
+									<input name="email" type="text" placeholder="Email">
+								</div>
+								<div class="col-lg-12">
+									<input name="telephone" type="text" placeholder="Phone Number">
+									<textarea name="message" placeholder="Give us more detail..."></textarea>
+									<button type="submit" class="site-btn">Submit</button>
+								</div>
+							</div>
+						</form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+	<!-- Contact Section End -->
 <script>
     // Initialize and add the map
     function initMap() {

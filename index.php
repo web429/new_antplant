@@ -52,17 +52,15 @@
   <link rel="apple-touch-icon" href="img/favicon.png"><!-- Bootstrap core CSS -->
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Css Styles -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="assets/css/elegant-icons.css" type="text/css">
-  <link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
-  <link rel="stylesheet" href="assets/css/barfiller.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/nice-select.css" type="text/css">
   <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="assets/css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
@@ -75,8 +73,9 @@
 <body class="is-preload">
   <!-- Page Preloder -->
   <div id="preloder">
-    <div class="loader"></div>
+      <div class="loader"></div>
   </div>
+
   <?php include "language.php"; ?>
   <?php include "header.php"; ?>
 
@@ -101,105 +100,109 @@
   <?php  
         } elseif ($row['nume_en'] == 'Home') {
     ?>
-  <!-- Hero Section Begin -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6">
-          <div class="hs-text">
-            <div class="label"><span>TAYMIN LTD.</span></div>
-            <h2 style="color:black;-webkit-text-stroke: 1px white;text-shadow:1px 1px 2px gray;font-weight:800;">
-              <strong>Welcome To
+
+    <!-- Hero Section Begin -->
+    <section class="hero set-bg" data-setbg="assets/img/2.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="hero__text">
+                        <h2><strong>Welcome To
                 <em>TAYMIN LTD</em>.</strong></h2>
-            <div class="slider-text">
-              <p><?php echo $textForCarousel; ?></p>
+                <style>
+                  .hero h5 p {
+                    color: white;
+                  }
+                  </style>
+                        <h5><?php echo $textForCarousel; ?></h5>
+                        <a href="index.php?p=Contact&l=en" class="primary-btn">Contact us</a>
+                        <a href="products.php?cat=all&l=en&page=1" class="primary-btn second-bg">Our stock</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 offset-xl-2">
-          <div class="trending-post">
-            <div class="section-title">
-              <h5><?php echo $word['ourservice_'.$lang];?></h5>
-            </div>
-            <div class="trending-slider owl-carousel">
-              <style>
-                .ti-text h5 {
-                  min-height: 50px;
-                }
-              </style>
-              <div class="single-trending-item">
-                <div class="trending-item">
-                  <div class="ti-text">
-                    <h5><a href="#">Introducing Equipments More Easily
-                        a...</a></h5>
-                    <div class="ti-pic mt-50">
-                      <img src="assets/img/4.jpg" alt="">
-                    </div>
-                    <ul>
-                      <li><i class="fa fa-users"></i> 1,253</li>
-                      <li><i class="fa fa-user-secret"></i> 127</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="single-trending-item">
-                <div class="trending-item">
-                  <div class="ti-text">
-                    <h5><a href="#">Renting Service
-                        a...</a></h5>
-                    <div class="ti-pic mt-50">
-                      <img src="assets/img/5.jpg" alt="">
-                    </div>
-                    <ul>
-                      <li><i class="fa fa-truck"></i> 21,546</li>
-                      <li><i class="fa fa-retweet"></i> 12</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="single-trending-item">
-                <div class="trending-item">
-                  <div class="ti-text">
-                    <h5><a href="#">Sales and Auctions
-                        a...</a></h5>
-                    <div class="ti-pic mt-50">
-                      <img src="assets/img/contact.jpg" alt="">
-                    </div>
-                    <ul>
-                      <li><i class="fa fa-credit-card-alt"></i> 2.3 M</li>
-                      <li><i class="fa fa-balance-scale"></i> 2300 K</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-slider owl-carousel">
-      <div class="hs-item set-bg" data-setbg="assets/img/1.jpg"></div>
-      <div class="hs-item set-bg" data-setbg="assets/img/2.jpg"></div>
-      <div class="hs-item set-bg" data-setbg="assets/img/3.jpg"></div>
-    </div>
-  </section>
-  <!-- Hero Section End -->
+    </section>
+    <!-- Hero Section End -->
   
-  <!-- Latest Preview Section Begin -->
-  <section class="latest-preview-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-title">
-            <h5>Latest Arrivals</h5>
-          </div>
+    <section class="feature spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="feature__text">
+                        <div class="section-title">
+                            <span>Why choose us ?</span>
+                            <h2>Our stock</h2>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua viverra maecenas facilisis. </p>
+                        <a href="products.php?cat=all&l=en&page=1" class="primary-btn second-bg">See Stock</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="feature__item">
+                                <img src="assets/img/feature/feature-1.png" alt="">
+                                <h5>Backhoe Loaders</h5>
+                            </div>
+                            <div class="feature__item">
+                                <img src="assets/img/feature/feature-2.png" alt="">
+                                <h5>Tracked Excavators</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="feature__item right-column">
+                                <img src="assets/img/feature/feature-3.png" alt="">
+                                <h5>Telescopic Loaders</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="lp-slider owl-carousel">
-          <?php 
-              $query = mysql_query ( " SELECT * FROM $tab_produse where featured='1' LIMIT 10");
-              while ($row = mysql_fetch_array($query)) {     
+    </section>
+  
+    
+    <!-- About Video Section Begin -->
+    <section class="about-video">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 p-0">
+                    <div class="about__video__bg set-bg" data-setbg="assets/img/4.jpg">
+                        <a href="https://www.youtube.com/watch?v=" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-0">
+                    <div class="about__video__text">
+                        <div class="section-title">
+                            <span>Features</span>
+                            <h2>looking for best?</h2>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua viverra maecenas facilisis.</p>
+                        <a href="#latest_arrivals" class="primary-btn second-bg">more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Video Section End -->
+
+    <!-- Application Form Section Begin -->
+    <section class="application-form spad" id="latest_arrivals">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title center-title">
+                        <span>Giving Best Options For You</span>
+                        <h2>Latest Arrivals</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <?php 
+                $query = mysql_query ( " SELECT * FROM $tab_produse where featured='1' LIMIT 4");
+                while ($row = mysql_fetch_array($query)) {     
                   $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$row['id']."' ");
                   $row2 = mysql_fetch_array($query2);
                   $while_parinte = $row['parinte'];
@@ -208,41 +211,27 @@
                   $rating = rand(65, 95);
                   $disp_rating = $rating * 1;
                   $rating_val = $rating / 10;
-          ?>
-          <div class="col-lg-3">
-            <div class="lp-item">
-              <div class="lp-pic set-bg" data-setbg="upload/<?php echo $row2['numefisier']; ?>">
-                <div class="review-loader">
-                  <div class="loader-circle-wrap">
-                    <div class="loader-circle">
-                      <span class="circle-progress" data-cpid="id<?php echo $row['id'];?>"
-                        data-cpvalue="<?php echo $disp_rating;?>" data-cpcolor="#c20000"></span>
-                      <div class="review-point"><?php echo number_format($rating_val, 1);?></div>
+              ?>
+                <div class="col-lg-6">
+                  <div class="team__item">
+                    <div class="team__item__img">
+                        <img src="upload/<?php echo $row2['numefisier']; ?>" alt="">
+                    </div>
+                    <div class="team__item__text">
+                        <h5><a href="product.php?cat=<?php echo $row['parinte']; ?>&id=<?php echo $row['id'] ?>&l=<?php echo $_REQUEST['l']; ?>"><?php echo $row['nume_en']; ?></a></h5>
+                        <span><i class="fa fa-star"> </i> <?php echo number_format($rating_val, 1);?></span>
+                        <p><i class="fa fa-money"> </i> <?php echo $row['price']; ?></p>
+                        <p><i class="fa fa-calendar-o"> </i> <?php echo $row['year']; ?></p>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="lp-text">
-                <h6><a
-                    href="product.php?cat=<?php echo $row['parinte']; ?>&id=<?php echo $row['id'] ?>&l=<?php echo $_REQUEST['l']; ?>"><?php echo $row['nume_en']; ?></a>
-                </h6>
-                <ul>
-                  <li><i class="fa fa-money"></i> <?php echo $row['price']; ?></li>
-                  <li><i class="fa fa-calendar-o"></i> <?php echo $row['year']; ?></li>
-                </ul>
-              </div>
+              <?php 
+                }
+              ?>
             </div>
-          </div>
-          <?php 
-              }
-          ?>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- Latest Preview Section End -->
-
-  
+    </section>
+    <!-- Application Form Section End -->
 
   <?php
     }
@@ -431,6 +420,8 @@
     <?php
     } 
     ?>
+
+
   <?php include "page-footer.php";?>
 
   <!-- Sign Up Section Begin -->

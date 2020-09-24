@@ -11,13 +11,17 @@
 		display: inline-block;
 	}
 </style>
-<!-- Humberger Menu Begin -->
-<div class="humberger-menu-overlay"></div>
-    <div class="humberger-menu-wrapper">
-        <div class="hw-logo">
-            <a href="index.php?l=<?php echo $_REQUEST['l'] ?>"><img src="img/f-logo.png" alt=""></a>
+
+	<!-- Offcanvas Menu Begin -->
+	<div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__search">
+            <i class="fa fa-search search-switch"></i>
         </div>
-        <div class="hw-menu mobile-menu">
+        <div class="offcanvas__logo">
+            <a href="index.php?l=<?php echo $_REQUEST['l'] ?>"><img src="assets/img/logo.png" alt=""></a>
+        </div>
+        <nav class="offcanvas__menu mobile-menu">
             <ul>
 			<?php
 				$query = mysql_query ( " SELECT * FROM $tab_pagini where pagina_parent<>'999' ORDER BY pagina_id LIMIT 0 , 6 ");
@@ -47,35 +51,23 @@
 				} 
 			?>
             </ul>
-        </div>
+        </nav>
         <div id="mobile-menu-wrap"></div>
-        <div class="hw-copyright">
-            Copyright © 2020 All rights reserved
-        </div>
-        <div class="hw-social">
+        <div class="offcanvas__social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
             <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
         </div>
-		
-        <div class="hw-insta-media">
-            <div class="section-title">
-                <h5>Instagram</h5>
-            </div>
-            <div class="insta-pic">
-                <img src="assets/img/instagram/ip-1.jpg" alt="">
-                <img src="assets/img/instagram/ip-2.jpg" alt="">
-                <img src="assets/img/instagram/ip-3.jpg" alt="">
-                <img src="assets/img/instagram/ip-4.jpg" alt="">
-            </div>
-        </div>
+        <!-- <div class="offcanvas__btn">
+            <a href="#" class="primary-btn">Get Started</a>
+        </div> -->
     </div>
-    <!-- Humberger Menu End -->
+    <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="ht-options">
+    <header class="header">
+		<div class="ht-options">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-8">
@@ -96,26 +88,17 @@
                 </div>
             </div>
         </div>
-        <div class="logo">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                       <a href="index.php?l=<?php echo $_REQUEST['l'] ?>"><img src="assets/img/logo.png" alt=""></a>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="header__logo">
+                        <a href="index.php?l=<?php echo $_REQUEST['l'] ?>"><img src="assets/img/logo.png" alt=""></a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="nav-options">
-            <div class="container">
-                <div class="humberger-menu humberger-open">
-                    <i class="fa fa-bars"></i>
-                </div>
-                <div class="nav-search search-switch">
-                    <i class="fa fa-search"></i>
-                </div>
-                <div class="nav-menu">
-                    <ul>
-					<?php
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+						<?php
 						$query = mysql_query ( " SELECT * FROM $tab_pagini where pagina_parent<>'999' ORDER BY pagina_id LIMIT 0 , 6 ");
 						$nume = "nume_".$lang;
 						while ( $row = mysql_fetch_array($query) ) { 
@@ -141,8 +124,29 @@
 						<?php }
 						} 
 					?>
-                    </ul>
+                        </ul>
+                    </nav>
                 </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <div class="header__right__search">
+                            <i class="fa fa-search search-switch"></i>
+                        </div>
+                        <!-- <div class="header__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div> -->
+                        <!-- <div class="header__right__btn">
+                            <a href="#" class="primary-btn">Get Started</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
             </div>
         </div>
     </header>
+	<!-- Header Section End -->
