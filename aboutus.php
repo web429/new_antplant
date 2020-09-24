@@ -14,7 +14,7 @@
     <!-- Breadcrumb End -->
 
     <!-- About Hero Section Begin -->
-    <section class="about-hero spad set-bg" data-setbg="assets/img/about/about-hero-bg.jpg">
+    <section class="about-hero spad set-bg" data-setbg="img/slider1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-lg-5 m-auto text-center">
