@@ -102,7 +102,7 @@
     ?>
 
     <!-- Hero Section Begin -->
-    <section class="hero set-bg" data-setbg="assets/img/2.jpg">
+    <section class="hero hero-section" data-setbg="assets/img/2.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -120,6 +120,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="hero-slider owl-carousel">
+            <div class="hs-item set-bg" data-setbg="assets/img/1.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="assets/img/2.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="assets/img/3.jpg"></div>
         </div>
     </section>
     <!-- Hero Section End -->
@@ -240,180 +245,95 @@
     <?php
     if ($_REQUEST['p']=="search") {?>
       <!-- Breadcrumb Section Begin -->
-      <section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
-        <div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
-          <div class="container">
+      <div class="breadcrumb-option">
+        <div class="container">
             <div class="row">
-              <div class="col-lg-12 text-center">
-                <div class="breadcrumb-text">
-                  <h3>Search For: <span><?php echo $_POST['search'] ? $_POST['search'] : '';?></span></h3>
-                  <div class="bt-option">
-                    <a href="#">Home</a>
-                    <a href="#">Search Result</a>
-                    <span><?php echo $_POST['search'] ? $_POST['search'] : '';?></span>
-                  </div>
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <span>Search: <?php echo $_POST['search']; ?></span>
+                        <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1" style="float:right;">View all MACHINES</a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </div>
       <!-- Breadcrumb Section End -->
 
       <!-- Categories Grid Section Begin -->
-      <section class="categories-list-section spad">
-          <div class="container">
-              <div class="row">
-                <div class="col-lg-8 p-0">
-                  <?php
-                    if($_POST['search']){
-                        $search = $_POST['search'];
-                        $str_query = " SELECT * FROM $tab_produse where nume_en like '%$search%' || stock like '%$search%' || make like '%$search%' || model like '%$search%' ";
-                        $result = mysql_query($str_query);
-                        if(mysql_num_rows($result) == 0){
-                            $strDisplay = "No Result";
-                        } else {
-                            $strDisplay = '';
-                            while($row = mysql_fetch_array($result)) {
-                                $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$row['id']."' ");
-                                $row2 = mysql_fetch_array($query2);
-                                $strDisplay .= "
-                                  <div class='cl-item'>
-                                    <div class='cl-pic'>
-                                      <img src='upload/".$row2['numefisier']."' alt='TAYMIN LTD'>
-                                    </div>
-                                    <div class='cl-text'>
-                                        <div class='label'><span>".$row['model']."</span></div>
-                                        <h5><a href='product.php?cat=".$row['parinte']."&id=".$row['id']."&l=".$_REQUEST['l']."'>".$row['nume_en']."</a></h5>
-                                        <ul>
-                                          <li>by <span>".$row['make']."</span></li>
-                                          <li><i class='fa fa-money'></i>".$row['price']." &pound;</li>
-                                          <li><i class='fa fa-map-marker'></i>".$row['location']."</li>
-                                        </ul>
-                                    </div>
-                                  </div>
-                                ";
-                            }
-                        }
-                      }
-                      echo $strDisplay;
-                    ?>                  
-                  <div class="pagination-item" style="float:right;">
-                    <!-- <a href="#"><span>1</span></a>
-                    <a href="#"><span>2</span></a>
-                    <a href="#"><span>3</span></a> -->
-                    <a href="products.php?cat=all&l=en&page=1"><span>View All Machines</span></a>
-                  </div>  
-                </div> 
-                <div class="col-lg-4 col-md-7 p-0">
-                    <div class="sidebar-option">
-                        <div class="social-media">
-                            <div class="section-title">
-                                <h5>Social media</h5>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-facebook"></i></div>
-                                    <span>Facebook</span>
-                                    <div class="follow">1,2k Follow</div>
-                                </li>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-twitter"></i></div>
-                                    <span>Twitter</span>
-                                    <div class="follow">1,2k Follow</div>
-                                </li>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-youtube-play"></i></div>
-                                    <span>Youtube</span>
-                                    <div class="follow">2,3k Subs</div>
-                                </li>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-instagram"></i></div>
-                                    <span>Instagram</span>
-                                    <div class="follow">2,6k Follow</div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="best-of-post">
-                            <div class="section-title">
-                                <h5>Best of</h5>
-                            </div>
-                            <div class="bp-item">
-                                <div class="bp-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress-1" data-cpid="id-1" data-cpvalue="95"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">9.5</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bp-text">
-                                    <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 20</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="bp-item">
-                                <div class="bp-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress-1" data-cpid="id-2" data-cpvalue="85"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">8.5</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bp-text">
-                                    <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 20</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="bp-item">
-                                <div class="bp-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress-1" data-cpid="id-3" data-cpvalue="80"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">8.0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bp-text">
-                                    <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 20</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="bp-item">
-                                <div class="bp-loader">
-                                    <div class="loader-circle-wrap">
-                                        <div class="loader-circle">
-                                            <span class="circle-progress-1" data-cpid="id-4" data-cpvalue="75"
-                                                data-cpcolor="#c20000"></span>
-                                            <div class="review-point">7.5</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bp-text">
-                                    <h6><a href="#">This gaming laptop with a GTX 1660...</a></h6>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 20</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+      <section class="courses spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+                    <div class="section-title">
+                        <span>Search</span>
+                        <h2>Results</h2>
                     </div>
                 </div>
-              </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                    <div class="courses__all">
+                        <a href="products.php?cat=all&l=en&page=1" class="primary-btn second-bg">View all</a>
+                    </div>
+                </div>
+            </div>
+              <div class="row">
+              <?php
+                if($_POST['search']){
+                    $search = $_POST['search'];
+                    $str_query = " SELECT * FROM $tab_produse where nume_en like '%$search%' || stock like '%$search%' || make like '%$search%' || model like '%$search%' ";
+                    $result = mysql_query($str_query);
+                    if(mysql_num_rows($result) == 0){
+                        $strDisplay = "No Result";
+                    } else {
+                        $strDisplay = '';
+                        while($row = mysql_fetch_array($result)) {
+                            $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$row['id']."' ");
+                            $row2 = mysql_fetch_array($query2);
+                            $strDisplay .= '
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="course__item">
+                                    <img src="upload/'.$row2['numefisier'].'" alt="TAYMIN LTD">
+                                    <h5>'.$row['nume_en'].'</h5>
+                                    <h4>'.$row['model'].'</h4>
+                                    <p><i class="fa fa-money"></i> '.$row['price'].' &pound;</p>
+                                    <p><i class="fa fa-calendar-o"></i> '.$row['year'].'</p>
+                                    <a href="product.php?cat='.$row['parinte'].'&id='.$row['id'].'&l='.$_REQUEST['l'].'">View detail</a>
+                                </div>
+                            </div>
+                            ';
+                        }
+                    }
+                }
+                echo $strDisplay;
+                ?>   
+                </div>
+                <div class="pagination__option text-center" style="">
+                    <?php
+                        if($page == 1) {
+                        echo "<a href='#'>Previous</a>";
+                        } else {
+                        $j = $page - 1;
+                        echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$j.'">Previous</a>';
+                        }
+                        if($_REQUEST['cat'] <> 'all') {
+                        $page_query = mysql_query("SELECT COUNT(id) AS count FROM ".$tab_produse." WHERE parinte='".$_REQUEST['cat']."'");
+                        } else {
+                        $page_query = mysql_query("SELECT COUNT(id) AS count FROM ".$tab_produse);
+                        }
+                        $total_num = mysql_fetch_array($page_query);
+                        $total_page = floor($total_num['count'] / 10) + 1;
+                        for($i = 1; $i <= $total_page; $i++){
+                        echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$i.'" class="'.($i == $page ? "active" : "").'">'.$i.'</a>';
+                        }
+                        if($total_page == $page) {
+                        echo "<a href='#'>Next</a>";
+                        } else {
+                        $j = $page + 1;
+                        echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$j.'">Next</a>';
+                        }
+                    ?>
+                </div>
+            </div>
           </div>
       </section>
       <!-- Categories Grid Section End -->
