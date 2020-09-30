@@ -195,7 +195,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                                 <div class="lp-item">
                                     <a class="lp-pic" data-setbg="upload/">
                                     <div class="review-loader">
-                                        <a href="<?php echo "upload/".$rowzz['numefisier'] ?>" rel="shadowbox['<?php echo $_REQUEST['id'] ?>']"><img src="<?php echo "upload/".$rowzz['numefisier'] ?>" alt="SAN PLANT LTD." class="etc_img"/></a>
+                                        <a href="<?php echo "upload/".$rowzz['numefisier'] ?>" rel="shadowbox['<?php echo $_REQUEST['id'] ?>']"><img src="<?php echo "upload/".$rowzz['numefisier'] ?>" alt="PENRITH PLANT LTD." class="etc_img"/></a>
                                     </div>
                                     </a>
                                 </div>

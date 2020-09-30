@@ -89,7 +89,7 @@
         ?>
                 <div class="featured-item">
                     <a href="product.php?cat=<?php echo $row['parinte']; ?>&id=<?php echo $row['id'] ?>&l=<?php echo $_REQUEST['l']; ?>">
-                        <img src="upload/<?php echo $row2['numefisier']; ?>" alt="SAN PLANT LTD">
+                        <img src="upload/<?php echo $row2['numefisier']; ?>" alt="PENRITH PLANT LTD">
                     </a>    
                     <p><strong><?php echo $row['nume_en']; ?></strong></p>
                     <p>Price: <?php echo $row['price']; ?>, Year: <?php echo $row['year']; ?></p>
@@ -104,7 +104,7 @@
 
   <!-- Footer -->
   <footer id="footer">
-    <p class="copyright">Copyright &copy; 2020 SAN PLANT LTD
+    <p class="copyright">Copyright &copy; 2020 PENRITH PLANT LTD
   </footer>
 
 </div>
