@@ -11,7 +11,7 @@
                           $row = mysql_fetch_array($query);
                         ?>
                         <div class="footer__logo">
-                            <img src="assets/img/logo.png" alt="">
+                            <h2 style="color: white; font-weight: 800">PENRITH PLANT LTD</h2>
                         </div>
                         <!-- <h5><?php echo $word['contact_details_'.$lang];?></h5> -->
                         <ul style="color: #e0e0e0;">

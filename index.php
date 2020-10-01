@@ -122,6 +122,7 @@
             </div>
         </div>
         <div class="hero-slider owl-carousel">
+            <div class="hs-item set-bg" data-setbg="assets/img/0.jpg"></div>
             <div class="hs-item set-bg" data-setbg="assets/img/1.jpg"></div>
             <div class="hs-item set-bg" data-setbg="assets/img/2.jpg"></div>
             <div class="hs-item set-bg" data-setbg="assets/img/3.jpg"></div>
@@ -138,27 +139,44 @@
                             <span>Why choose us ?</span>
                             <h2>Our stock</h2>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua viverra maecenas facilisis. </p>
+                        <p>We Pride ourselves in personal relationships with our customers, from those down the street to those around the world. Whether you are across the country, know your construction needs are in good hands with our dedicated team. </p>
                         <a href="products.php?cat=all&l=en&page=1" class="primary-btn second-bg">See Stock</a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="feature__item">
-                                <img src="assets/img/feature/feature-1.png" alt="">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="feature__item right-column">
+                                <img src="assets/img/feature/feature (2).png" alt="">
                                 <h5>Backhoe Loaders</h5>
                             </div>
                             <div class="feature__item">
-                                <img src="assets/img/feature/feature-2.png" alt="">
+                                <img src="assets/img/feature/feature (18).png" alt="">
                                 <h5>Tracked Excavators</h5>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="feature__item right-column">
-                                <img src="assets/img/feature/feature-3.png" alt="">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="feature__item">
+                                <img src="assets/img/feature/feature (13).png" alt="">
                                 <h5>Telescopic Loaders</h5>
+                            </div>
+                            <div class="feature__item">
+                                <img src="assets/img/feature/feature (23).png" alt="">
+                                <h5>Mini Excavators</h5>
+                            </div>
+                            <div class="feature__item">
+                                <img src="assets/img/feature/feature (25).png" alt="">
+                                <h5>Tractors</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="feature__item right-column">
+                                <img src="assets/img/feature/feature (16).png" alt="">
+                                <h5>Rollers</h5>
+                            </div>
+                            <div class="feature__item">
+                                <img src="assets/img/feature/feature (20).png" alt="">
+                                <h5>Bulldozer</h5>
                             </div>
                         </div>
                     </div>
@@ -167,31 +185,6 @@
         </div>
     </section>
   
-    
-    <!-- About Video Section Begin -->
-    <section class="about-video">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 p-0">
-                    <div class="about__video__bg set-bg" data-setbg="assets/img/4.jpg">
-                        <a href="https://www.youtube.com/watch?v=" class="play-btn video-popup"><i class="fa fa-play"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-0">
-                    <div class="about__video__text">
-                        <div class="section-title">
-                            <span>Features</span>
-                            <h2>looking for best?</h2>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua viverra maecenas facilisis.</p>
-                        <a href="#latest_arrivals" class="primary-btn second-bg">more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About Video Section End -->
 
     <!-- Application Form Section Begin -->
     <section class="application-form spad" id="latest_arrivals">
