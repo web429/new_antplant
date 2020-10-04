@@ -108,7 +108,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="hero__text">
                         <h2><strong>Welcome To
-                <em>TAYMIN LTD</em>.</strong></h2>
+                <em>PENRITH PLANT LTD</em>.</strong></h2>
                 <style>
                   .hero h5 p {
                     color: white;
@@ -139,7 +139,7 @@
                             <span>Why choose us ?</span>
                             <h2>Our stock</h2>
                         </div>
-                        <p>We Pride ourselves in personal relationships with our customers, from those down the street to those around the world. Whether you are across the country, know your construction needs are in good hands with our dedicated team. </p>
+                        <p>Our plant equipment hire range includes excavators, dumpers, telehandlers, rollers, compressors and more. Through continued investment in our range, we ensure that our customers continue to have access to market-leading brands such as CAT, Hyundai, Takeuchi and Yanmar excavators, JCB, Terex and Thwaites dumpers, Ammann and Hamm rollers and Merlo, JCB and Manitou Telehandlers. in stead of We Pride ourselves in personal relationships with our customers, from those down the street to those around the world. Whether you are across the country, know your construction needs are in good hands with our dedicated team.</p>
                         <a href="products.php?cat=all&l=en&page=1" class="primary-btn second-bg">See Stock</a>
                     </div>
                 </div>

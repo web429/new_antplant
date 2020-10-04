@@ -16,7 +16,7 @@
                         <!-- <h5><?php echo $word['contact_details_'.$lang];?></h5> -->
                         <ul style="color: #e0e0e0;">
                             <li><strong>Email:</strong> <a class="footer-a" href="mailto:<?php echo $row['email_contact']?>"><?php echo $row['email_contact'] ?></a></li>
-                            <li><strong>URL:</strong> <a class="footer-a" href="#">www.antplant.co.uk</a></li>
+                            <li><strong>URL:</strong> <a class="footer-a" href="#">www.penrith-plant.co.uk/</a></li>
                             <li><strong>Phone:</strong> <a href=""><?php $qr = mysql_query ( " select * from $xtable "); $rr = mysql_fetch_array($qr); echo $rr['numar_contact'] ?></a></li>
                         </ul>
                     </div>

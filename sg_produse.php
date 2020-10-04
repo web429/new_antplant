@@ -77,7 +77,7 @@ if (isset($_POST['save'])) {
 		$hours = $_POST['hours'];
 		$price = $_POST['price'];
 		$location = $_POST['location'];
-		$featured = $_POST['featured'];
+		$featured = is_null($_POST['featured']) ? 0 : $_POST['featured'];
 
 		$result = mysql_query("select * from $tab_produse where nume_en='".$nume_en."'") or die (mysql_error());
 		if (mysql_num_rows($result)<>0) {
