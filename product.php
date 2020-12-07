@@ -137,7 +137,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
     <div class="loader"></div>
   </div>
 	<!-- Breadcrumb Section Begin -->
-	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
+	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg" style = " margin-top: 35px;">
 		<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
 			<div class="container">
 			<div class="row">
@@ -216,7 +216,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
   </section>
   <!-- Latest Preview Section End -->
 	<!-- Details Post Section Begin -->
-    <section class="details-post-section spad">
+    <section class="details-post-section spad" style = "background: #1b1b3b;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 p-0">
@@ -427,87 +427,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-7">
-                    <div class="sidebar-option">
-                        <div class="social-media">
-                            <div class="section-title">
-                                <h5>Social media</h5>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-facebook"></i></div>
-                                    <span>Facebook</span>
-                                    <div class="follow">1,2k Follow</div>
-                                </li>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-twitter"></i></div>
-                                    <span>Twitter</span>
-                                    <div class="follow">1,2k Follow</div>
-                                </li>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-youtube-play"></i></div>
-                                    <span>Youtube</span>
-                                    <div class="follow">2,3k Subs</div>
-                                </li>
-                                <li>
-                                    <div class="sm-icon"><i class="fa fa-instagram"></i></div>
-                                    <span>Instagram</span>
-                                    <div class="follow">2,6k Follow</div>
-                                </li>
-                            </ul>
-						</div>
-						<div class="insta-media">
-                            <div class="section-title">
-                                <h5>Instagram</h5>
-                            </div>
-                            <div class="insta-pic">
-                                <img src="img/instagram/ip-1.jpg" alt="">
-                                <img src="img/instagram/ip-2.jpg" alt="">
-                                <img src="img/instagram/ip-3.jpg" alt="">
-                                <img src="img/instagram/ip-4.jpg" alt="">
-                            </div>
-                        </div>
-						<div class="best-of-post">
-							<div class="section-title">
-							<h5>Best of</h5>
-							</div>
-							<?php 
-							$rating = 100;
-							$queryp = mysql_query ( " SELECT * FROM $tab_produse ORDER BY id LIMIT 0, 5");
-							while ( $rowp = mysql_fetch_array($queryp) ) {
-							$query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$rowp['id']."' ");
-							$row2 = mysql_fetch_array($query2);
-							$while_cat = $_REQUEST['cat'];
-							$while_id = $rowp['id'];
-							$while_l = $_REQUEST['l'];
-							$rating = $rating - 3;
-							$show_rating = rand($rating, $rating + 3);
-							$pshow_rating = $show_rating / 10;
-							?>
-							<div class="bp-item">
-								<div class="bp-loader">
-								<div class="loader-circle-wrap">
-									<div class="loader-circle">
-									<span class="circle-progress-1" data-cpid="id-1" data-cpvalue="<?php echo $show_rating;?>" data-cpcolor="#c20000"></span>
-									<div class="review-point"><?php echo $pshow_rating;?></div>
-									</div>
-								</div>
-								</div>
-								<div class="bp-text">
-								<h6><a href="product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>"><?php echo $rowp['nume_en']; ?></a></h6>
-								<ul>
-									<li>by <span><?php echo $rowp['make'] ?></span></li>
-									<li><i class='fa fa-money'></i><?php echo $rowp['price'] ?> &pound;</li>
-									<li><i class='fa fa-calendar-o'></i><?php echo $rowp['year'] ?></li>
-								</ul>
-								</div>
-							</div>
-							<?php
-							}
-							?>
-						</div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>

@@ -2,7 +2,7 @@
 $versiune="0.8.1.2";
 //setari locale
 $server = "localhost";
-$database = "jjd_db";
+$database = "jjdplant";
 $db_user = "root";
 $db_pass = "";
 $tab_pagini = "trampz_pagini";

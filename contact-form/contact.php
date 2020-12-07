@@ -65,60 +65,48 @@ if(isset($_POST['submit'])) {
 		}
 	</style>
 	<!-- Breadcrumb Section Begin -->
-	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
-		<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-				<div class="breadcrumb-text">
-					<h3 class="text-center"><?php echo $word['contactus_'.$lang];?></h3>
-					<div class="bt-option text-center">
-						<a href="index.php">Home</a>
-						<a href="#" class="danger">Contact</a>
-					</div>
-				</div>
-			</div>
-			</div>
-	</div>
-	</section>
-<!-- Breadcrumb Section End -->
-
-    <!-- Contact Section Begin -->
-    <section class="contact-section spad">
+	<div class="brand_color" >
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-					<div class="row">
-						<div class="col-md-7 col-sm-12">
-							<div id="map"></div>
-						</div>
-						<div class="col-md-5 col-sm-12">
-							<p><?php echo $row[$continut]; ?></p>
-						</div>
-					</div>
-                    <div class="contact-text">
-                        <div class="contact-title">
-                            <h3><?php echo $word['contactus_'.$lang];?></h3>
-                            <p>We are always waiting for your quotes</p>
-                        </div>
-                        <div class="contact-form">
-                            <div class="dt-leave-comment">
-                                <form id="contactform" action="index.php?p=<? echo $_REQUEST['p'] ?>&l=<?php echo $_REQUEST['l'] ?>" method="post">
-                                    <div class="input-list">
-                                        <input name="contactname" type="text" placeholder="Name">
-                                        <input name="email" type="text" placeholder="Email">
-                                        <input name="telephone" type="text" placeholder="Phone Number">
-                                    </div>
-                                    <textarea name="message" placeholder="Give us more detail..."></textarea>
-                                    <button type="submit">Submit</button>
-                                </form>
-                            </div>
-                        </div>
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Contact Us</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+<!-- Breadcrumb Section End -->
+<div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form class="main_form">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input class="form-control" placeholder="Your name" type="text" name="Your Name">
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input class="form-control" placeholder="Email" type="text" name="Email">
+                            </div>
+                            <div class=" col-md-12">
+                                <input class="form-control" placeholder="Phone" type="text" name="Phone">
+                            </div>
+                            <div class="col-md-12">
+                                <textarea class="textarea" placeholder="Message"></textarea>
+                            </div>
+                            <div class=" col-md-12">
+                                <button class="send">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Section Begin -->
+    
 <script>
     // Initialize and add the map
     function initMap() {

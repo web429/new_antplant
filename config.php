@@ -3,8 +3,8 @@ $versiune="0.8.1.2";
 //setari locale
 $server = "localhost";
 $database = "jjdplant";
-$db_user = "jjdplantltd";
-$db_pass = "@Radio88";
+$db_user = "root";
+$db_pass = "";
 $tab_pagini = "trampz_pagini";
 $tab_fisiere = "trampz_fisiere";
 $tab_produse = "trampz_produse";

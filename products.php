@@ -17,7 +17,7 @@
 include "panou/config.php";
 $link = mysql_connect($server, $db_user, $db_pass) or die (mysql_error());
 mysql_select_db($database) or die("Eroare conectare baza de date.");
-$_REQUEST['p']="Stocklist";
+$_REQUEST['p']="Products";
 if (!isset($_REQUEST['cat'])) {
 	
 }
@@ -41,7 +41,7 @@ $page_offset = 10 * ($page - 1);
 if ($cat<>"all")
 $result = mysql_query("select * from $tab_pagini where pagina_id='".$_REQUEST['cat']."'");
 else
-$result = mysql_query("select * from $tab_pagini where nume_en='Stocklist'");
+$result = mysql_query("select * from $tab_pagini where nume_en='Products'");
 $row=mysql_fetch_array($result);
 echo "<title>".$row['pagina_title']."</title>\n";
 echo "<meta name=\"keywords\" content=\"".$row['pagina_keywords']."\" />\n";
@@ -82,50 +82,28 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
     <div class="loader"></div>
   </div>
 <!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg">
-  <div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="breadcrumb-text">
-            <h3 class="text-center"><?php echo $_REQUEST['p'];?></h3>
-            <div class="bt-option">
-              <a href="index.php">Home</a>
-              <a href="#"><?php echo $_REQUEST['p'];?></a>
-              <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1">
-                <?php $queryz = mysql_query( " SELECT * FROM $tab_produse ");
-              ?>
-                Stocklist (<?php echo mysql_num_rows($queryz) ?>) >
-              </a>
-              <?php if ($_REQUEST['cat']<>'all') { ?>
-                <a href="#">
-                  <?php $queryz = mysql_query( " SELECT * FROM $tab_produse where parinte='".$_REQUEST['cat']."'");
-                ?>
-                  <?php
-                $queryz1 = mysql_query ( " SELECT * FROM $tab_pagini where pagina_id='".$_REQUEST['cat']."' ");
-                $rowz1 = mysql_fetch_array($queryz1);
-                $nume = "nume_".$_REQUEST['l'];
-                echo $rowz1[$nume];
-              ?>
-                (<?php echo mysql_num_rows($queryz) ?>) >
-              </a>
-              <?php } ?>
-                <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1" style="float:right;">View all
-                  MACHINES</a>
-            </div>
+<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg" style = "margin-top: 35px">
+  
+  <div class="brand_color" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>our product</h2>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   </div>
 </section>
 <!-- Breadcrumb Section End -->
 
 <!-- Categories Grid Section Begin -->
-<section class="categories-grid-section spad">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 p-0">
+<section class="categories-grid-section spad" >
+<div class="product-bg">
+         <div class="product-bg-white">
+         <div class="container">
+            <div class="row">
+            <div class="col-lg-8 p-0">
         <div class="row">
           <?php
             if ($_REQUEST['cat']<>'all') { 
@@ -181,7 +159,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
           }	
           ?>
         </div>
-        <div class="pagination-item" style="float:right;">
+        <div class="pagination-item" style="float:right; ">
           <?php
             if($page == 1) {
               echo "<a href='#'>Previous</a>";
@@ -210,7 +188,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
       </div>
       <div class="col-lg-4 col-md-7 p-0">
         <div class="sidebar-option">
-          <div class="social-media">
+        <div class="social-media">
             <div class="section-title">
               <h5>Social media</h5>
             </div>
@@ -258,7 +236,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                 <div class="bp-loader">
                   <div class="loader-circle-wrap">
                     <div class="loader-circle">
-                      <span class="circle-progress-1" data-cpid="id-1" data-cpvalue="<?php echo $show_rating;?>" data-cpcolor="#c20000"></span>
+                      <span class="circle-progress-1" data-cpid="id-1" data-cpvalue="<?php echo $show_rating;?>" data-cpcolor="#ffc221"></span>
                       <div class="review-point"><?php echo $pshow_rating;?></div>
                     </div>
                   </div>
@@ -278,8 +256,10 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
           </div>
         </div>
       </div>
-    </div>
-  </div>
+              
+               </div>
+            </div>
+         </div>
 </section>
 <!-- Categories Grid Section End -->
 
