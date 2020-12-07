@@ -20,13 +20,13 @@
                <figure><img src="assets/img/0.jpg"/></figure>
             </div>
          </dir>
-          <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+         <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <div class="about_box">
                <h3>Who is SANPLANT</h3>
                <p>SAN PLANT LTD is the leading independent provider of construction equipment in Durham and beyond.With contacts across the globe,.</p>
                <p>we can source the machinery you need and ship it anywhere in the world. SAN PLANT LTD have many satisfied customers throughout more than 30 different countries.</p>
             </div>
-         </dir> 
+         </dir>  
       </div>
    </div>
 </div>

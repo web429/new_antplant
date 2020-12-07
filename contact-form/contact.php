@@ -54,9 +54,7 @@ if(isset($_POST['submit'])) {
 
 ?>
 	<style>
-		.row {
-			margin-bottom: 20px;
-		}
+	
 		#map {
 			width: 100%;
 			height: 250px;
@@ -77,13 +75,59 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 <!-- Breadcrumb Section End -->
-<div class="contact">
+<section class="contact-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-lg-12">
+					<div class="row">
+						<div class="col-md-7 col-sm-12">
+							<div id="map"></div>
+						</div>
+						<div class="col-md-5 col-sm-12">
+							<p><?php echo $row[$continut]; ?></p>
+						</div>
+					</div>
+                    <div class="contact-text" style = "margin-top: 50px;">
+                        <div class="contact-title">
+                            <h3><?php echo $word['contactus_'.$lang];?></h3>
+                            <p>We are always waiting for your quotes</p>
+                        </div>
+                        <div class="contact-form">
+                            <div class="dt-leave-comment">
+                                <form id="contactform" action="index.php?p=<? echo $_REQUEST['p'] ?>&l=<?php echo $_REQUEST['l'] ?>" method="post">
+                                    <div class="input-list">
+                                        <input name="contactname" type="text" placeholder="Name">
+                                        <input name="email" type="text" placeholder="Email">
+                                        <input name="telephone" type="text" placeholder="Phone Number">
+                                    </div>
+                                    <textarea name="message" placeholder="Give us more detail..."></textarea>
+                                    <div class=" col-md-12">
+                                        <button class="send">Send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- <div class="contact">
+        <div class="container">
+            <div class="row">
 
+                <div class="col-md-12">
                     <form class="main_form">
                         <div class="row">
+                            <div class="col-md-7 col-sm-12">
+                                <div id="map"></div>
+                            </div>
+                            <div class="col-md-5 col-sm-12">
+                                <p><?php echo $row[$continut]; ?></p>
+                            </div>  
+                        </div>
+                        <div class="row">
+                        
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                 <input class="form-control" placeholder="Your name" type="text" name="Your Name">
                             </div>
@@ -104,7 +148,7 @@ if(isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Contact Section Begin -->
     
 <script>

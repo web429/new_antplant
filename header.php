@@ -83,12 +83,11 @@
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" >
                        <div class="top-box">
-                           <ul class="sociel_link">
-                           <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                           <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                           <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                           <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
-                           </ul>
+                       <div class="ht-widget">
+                            <ul>
+                                <li><i class="fa fa-clock-o"></i> Working Hours: Monday - Friday, 9:00 AM ~ 16:00 PM</li>
+                            </ul>
+                        </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"  style = "margin:auto !important">

@@ -228,7 +228,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                                         <div class="loader-circle-wrap">
                                             <div class="loader-circle">
                                                 <span class="circle-progress-2" data-cpid="id-5" data-cpvalue="85"
-                                                    data-cpcolor="#c20000"></span>
+                                                    data-cpcolor="#ffc221"></span>
                                                 <div class="review-point">
                                                     <div>8.5</div>
                                                     <span>AVERAGE SCORE</span>

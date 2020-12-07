@@ -15,6 +15,7 @@
   <meta name="viewport" content="width=device-width">
   <?php
     include "panou/config.php";
+    
     $link = mysql_connect($server, $db_user, $db_pass) or die (mysql_error());
     mysql_select_db($database) or die("Eroare conectare baza de date.");
 
@@ -35,7 +36,9 @@
 
     $pag = $_REQUEST['p'];
     $lang = $_REQUEST['l'];
+/////////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////////////
     $result = mysql_query("select * from $tab_pagini where nume_".$_REQUEST['l']."='".$_REQUEST['p']."'");
     $row=mysql_fetch_array($result);
     echo "<title>".$row['pagina_title']."</title>\n";
@@ -173,62 +176,7 @@
 <!-- end CHOOSE -->
 
 <!-- service --> 
-<div class="service">
-    <div class="container">
-      <div class="row">
-          <div class="col-md-8 offset-md-2">
-            <div class="title">
-                <h2>Service <strong class="black">Process</strong></h2>
-                <span>Easy and effective way to get your device repair</span>
-            </div>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div class="service-box">
-              <i><img src="assets/icon/service1.png"/></i>
-              <h3>Fast service</h3>
-              <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div class="service-box">
-              <i><img src="assets/icon/service2.png"/></i>
-              <h3>Secure payments</h3>
-              <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div class="service-box">
-              <i><img src="assets/icon/service3.png"/></i>
-              <h3>Expert team</h3>
-              <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div class="service-box">
-              <i><img src="assets/icon/service4.png"/></i>
-              <h3>Affordable services</h3>
-              <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div class="service-box">
-              <i><img src="assets/icon/service5.png"/></i>
-              <h3>90 Days warranty</h3>
-              <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div class="service-box">
-              <i><img src="assets/icon/service6.png"/></i>
-              <h3>Award winning</h3>
-              <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+
       <!-- end service -->
 <div class="product">
   <div class="container">
@@ -245,70 +193,49 @@
 <div class="product-bg">
   <div class="product-bg-white">
   <div class="container">
-    <div class="row">
-     
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p1.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
+  <div class="row">
+        <div class="lp-slider owl-carousel">
+          <?php 
+              $query = mysql_query ( " SELECT * FROM $tab_produse where featured='1' LIMIT 5");
+              while ($row = mysql_fetch_array($query)) {     
+                  $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$row['id']."' ");
+                  $row2 = mysql_fetch_array($query2);
+                  $while_parinte = $row['parinte'];
+                  $while_id = $row['id'];
+                  $while_l = $_REQUEST['l'];
+                  $rating = rand(65, 95);
+                  $disp_rating = $rating * 1;
+                  $rating_val = $rating / 10;
+          ?>
+          <div class="col-lg-3">
+            <div class="lp-item">
+              <div class="lp-pic set-bg" data-setbg="upload/<?php echo $row2['numefisier']; ?>">
+                <div class="review-loader">
+                  <div class="loader-circle-wrap">
+                    <div class="loader-circle">
+                      <span class="circle-progress" data-cpid="id<?php echo $row['id'];?>"
+                        data-cpvalue="<?php echo $disp_rating;?>" data-cpcolor="#ffc221"></span>
+                      <div class="review-point"><?php echo number_format($rating_val, 1);?></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lp-text">
+                <h6><a
+                    href="product.php?cat=<?php echo $row['parinte']; ?>&id=<?php echo $row['id'] ?>&l=<?php echo $_REQUEST['l']; ?>"><?php echo $row['nume_en']; ?></a>
+                </h6>
+                <ul>
+                  <li><i class="fa fa-money"></i> <?php echo $row['price']; ?></li>
+                  <li><i class="fa fa-calendar-o"></i> <?php echo $row['year']; ?></li>
+                </ul>
+              </div>
+            </div>
           </div>
+          <?php 
+              }
+          ?>
         </div>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p2.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p3.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p4.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p5.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p2.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p6.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-          <div class="product-box">
-              <i><img src="assets/img/p7.png"/></i>
-              <h3>Norton Internet Security</h3>
-              
-          </div>
-        </div>
-      
-       </div>  
-      
-        
       </div>
-    </div>
     
     <div class="container">
       <div class="yellow_bg">
@@ -327,16 +254,31 @@
           </div>
       </div>
     </div>  
- </div>
+      <div class="row">
+        <div class="col-md-7 col-sm-12" style="margin:0px;  margin-top: 40px; margin-bottom: 40px;">
+          <div id="map"></div>
+        </div>
+        <div class="col-md-5 col-sm-12" style="margin:0px;  margin-top: 40px;">
+        <?php
+        $query = mysql_query ( " SELECT * FROM trampz_pagini Where nume_en='Contact'");
+        $row1 = mysql_fetch_array($query);
+        
+        ?>
+          <p><?php echo $row1[$continut]; ?></p>
+        </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- end our product -->
 <!-- map -->
-<div class="container-fluid padi">
-    <div class="map">
-      <img src="assets/img/mapimg.jpg" alt="img"/>
-    </div>
-</div>
+  <!-- <div class="container">
+  <div class="col-md-12 col-sm-12 " style="margin:0px; padding:0px; margin-top: 40px;">
+							<div id="map"></div>
+						</div>
+  </div> -->
+  
 <!-- end map --> 
 
 
@@ -571,7 +513,38 @@ if ($_REQUEST['p']=="search") {?>
     </div>
   </div>
   <!-- Search model end -->
+  <script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var uluru = {lat: 53.7841137, lng: -2.7898546};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 16, center: uluru});
+        // The marker, positioned at Uluru
+        
+        var marker = new google.maps.Marker({
+            position: uluru, 
+            map: map,
+            title: "Office One Eco Tyres",
+            animation: google.maps.Animation.DROP,
+        });
 
+        marker.setMap(map);
+    }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhtpDqV3eFcqXbywJKMnvghzjQkvHAus8&callback=initMap">
+</script>
+<style>
+  		#map {
+			width: 100%;
+			height: 250px;
+			background-color: grey;
+			border: 1px solid gray;
+		}
+
+</style>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
