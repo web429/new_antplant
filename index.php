@@ -103,18 +103,17 @@
   <?php  
         } elseif ($row['nume_en'] == 'Home') {
     ?>
- 
-  <section class="slider_section" style = "padding-top: 35px;">
+  <section class="slider_section" style = "padding-top:27px;">
     <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
-       <div class="carousel-inner" style = "height: 80vh;"> 
+       <div class="carousel-inner" style = "height: 40vh;"> 
           <div class="carousel-item active">
-            <img class="first-slide" src="assets/img/1.jpg" alt="First slide" style = "width : 100%;">
+            <img class="first-slide" src="assets/img/1.jpg" alt="First slide" style = "width : 100%;margin-top:-20vh;">
           </div>
           <div class="carousel-item">
-            <img class="second-slide" src="assets/img/2.jpg" alt="Second slide" style = "width : 100%;">
+            <img class="second-slide" src="assets/img/2.jpg" alt="Second slide" style = "width : 100%;margin-top:-30vh;">
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="assets/img/3.jpg" alt="Third slide" style = "width : 100%;">
+            <img class="third-slide" src="assets/img/3.jpg" alt="Third slide" style = "width : 100%;margin-top:-50vh;">
           </div>
       </div>
       <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev"><i class='fa fa-angle-right'></i></a>

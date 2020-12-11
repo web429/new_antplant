@@ -78,14 +78,14 @@
 	<header>
          <!-- header inner -->
          <div class="header">
-            <div class="head_top" style = "background: yello;">
+            <div class="head_top" style = "padding:15px;">
                <div class="container">
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" >
                        <div class="top-box">
                        <div class="ht-widget">
                             <ul>
-                                <li><i class="fa fa-clock-o"></i> Working Hours: Monday - Friday, 9:00 AM ~ 16:00 PM</li>
+                                <li style="padding-top: 3px;"><i class="fa fa-clock-o"></i> Working Hours: Monday - Friday, 9:00 AM ~ 16:00 PM</li>
                             </ul>
                         </div>
                         </div>
@@ -119,7 +119,12 @@
                      </div>
 						</div>
                </div>
-               <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+               <style>
+                  .menu-area span {
+                     font-weight: bold;
+                  }
+               </style>
+               <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9" style="padding-top:10px;">
                   <div class="menu-area">
                      <div class="limit-box">
                         <nav class="main-menu">

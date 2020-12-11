@@ -4948,7 +4948,7 @@ nav.main-menu {
 }
 
 .main-menu ul>li a {
-	padding: 30px 23px 0 23px;
+	padding: 15px 23px 15px 23px;
 	line-height: 20px;
 	font-size: 16px;
 	display: block;
@@ -5004,6 +5004,7 @@ nav.main-menu {
 	background: #fff;
 	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	padding: 15px 0;
 }
 
 .main-menu>ul>li:hover>ul {
@@ -5590,7 +5591,7 @@ font-size: 18px;
 }
 .header {
 	background: #fff;
-	padding-bottom: 35px;
+	padding-bottom: 20px;
 }
 
 .logo a {
