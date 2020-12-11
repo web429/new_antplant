@@ -17,7 +17,7 @@
       <div class="row">
          <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <div class="about_box">
-               <figure><img src="assets/img/0.jpg"/></figure>
+               <figure><img src="assets/img/1.jpg"/></figure>
             </div>
          </dir>
          <dir class="col-xl-6 col-lg-6 col-md-12 col-sm-12">

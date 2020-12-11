@@ -136,6 +136,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
   <div id="preloder">
     <div class="loader"></div>
   </div>
+  
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg" style = " margin-top: 35px;">
 		<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
@@ -182,44 +183,42 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 	</section>
 	<!-- Breadcrumb Section End -->
 
-	<!-- Latest Preview Section Begin -->
-	<section class="latest-preview-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-title">
-            <h5>Images</h5>
-          </div>
+    <!-- Latest Preview Section Begin -->
+    <section class="latest-preview-section">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="section-title">
+                <h5>Images</h5>
+            </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="lp-slider owl-carousel">
-			<?php 
-				$queryzz = mysql_query ( " SELECT * FROM $tab_fisiere where tip='".$_REQUEST['id']."' order by id LIMIT 1 ,4 ");
-				while ( $rowzz = mysql_fetch_array($queryzz) ) {
-				?>
-				<div class="col-lg-3">
-				  <div class="lp-item">
-					<a class="lp-pic" data-setbg="upload/">
-					  <div class="review-loader">
-						  <a href="<?php echo "upload/".$rowzz['numefisier'] ?>" rel="shadowbox['<?php echo $_REQUEST['id'] ?>']"><img src="<?php echo "upload/".$rowzz['numefisier'] ?>" alt="SAN PLANT LTD." class="etc_img"/></a>
-					  </div>
-					</a>
-				  </div>
-				</div>
-				<?php
-				}						
-			?>
+        <div class="row">
+            <div class="lp-slider owl-carousel">
+                <?php 
+                    $queryzz = mysql_query ( " SELECT * FROM $tab_fisiere where tip='".$_REQUEST['id']."' order by id LIMIT 1 ,4 ");
+                    while ( $rowzz = mysql_fetch_array($queryzz) ) {
+                    ?>
+                    <div class="col-lg-3">
+                    <div class="lp-item">
+                        <a class="lp-pic" data-setbg="upload/">
+                        <div class="review-loader">
+                            <a href="<?php echo "upload/".$rowzz['numefisier'] ?>" rel="shadowbox['<?php echo $_REQUEST['id'] ?>']"><img src="<?php echo "upload/".$rowzz['numefisier'] ?>" alt="SAN PLANT LTD." class="etc_img"/></a>
+                        </div>
+                        </a>
+                    </div>
+                    </div>
+                    <?php
+                    }						
+                ?>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- Latest Preview Section End -->
-	<!-- Details Post Section Begin -->
+        </div>
+    </section>
     <section class="details-post-section spad" style = "background: #1b1b3b;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 p-0">
+                <div class="col-md-6 p-0">
                     <div class="details-text">
                         <div class="dt-overall-rating">
                             <div class="or-heading">
@@ -239,9 +238,9 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                                     <div class="or-text">
                                         <h5>Overall rating</h5>
                                         <div class="text-center">
-											<button class="kill-btn" style="margin-bottom:10px;"><i class='fa fa-print'></i> <span>Print this Page</span></button>
-											<button onclick="location.href='mailto:?Subject=I found this great machine!&Body=<?php echo curPageURL(); ?>';'" class="kill-btn"><i class="fa fa-send"></i> <span>Send to a friend</span></button>
-										</div>
+                                            <button class="kill-btn" style="margin-bottom:10px;"><i class='fa fa-print'></i> <span>Print this Page</span></button>
+                                            <button onclick="location.href='mailto:?Subject=I found this great machine!&Body=<?php echo curPageURL(); ?>';'" class="kill-btn"><i class="fa fa-send"></i> <span>Send to a friend</span></button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="or-skill">
@@ -288,66 +287,66 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                                 </div>
                             </div>
                             <div class="or-qualities">
-								<h5 style="color:white;">General Information</h5>
+                                <h5 style="color:white;">General Information</h5>
                                 <div class="qualities-item">
                                     <ul>
                                         <li>
-											<div class="row">
-												<div class="col-sm-5"><i class="fa fa-check"></i> Stock No: </div>
-												<div class="col-sm-7"><?php echo $rowz1['stock'] ?></div>
-											</li>
+                                            <div class="row">
+                                                <div class="col-sm-5"><i class="fa fa-check"></i> Stock No: </div>
+                                                <div class="col-sm-7"><?php echo $rowz1['stock'] ?></div>
+                                            </li>
                                         <li>
                                         <li>
-											<div class="row">
-												<div class="col-sm-5"><i class="fa fa-check"></i> Make: </div>
-												<div class="col-sm-7"><?php echo $rowz1['make'] ?></div>
-											</li>
+                                            <div class="row">
+                                                <div class="col-sm-5"><i class="fa fa-check"></i> Make: </div>
+                                                <div class="col-sm-7"><?php echo $rowz1['make'] ?></div>
+                                            </li>
                                         <li>
                                         <li>
-											<div class="row">
-												<div class="col-sm-5"><i class="fa fa-check"></i> Model: </div>
-												<div class="col-sm-7"><?php echo $rowz1['model'] ?></div>
-											</li>
+                                            <div class="row">
+                                                <div class="col-sm-5"><i class="fa fa-check"></i> Model: </div>
+                                                <div class="col-sm-7"><?php echo $rowz1['model'] ?></div>
+                                            </li>
                                         <li>
                                         <li>
-											<div class="row">
-												<div class="col-sm-5"><i class="fa fa-check"></i> Year: </div>
-												<div class="col-sm-7"><?php echo $rowz1['year'] ?></div>
-											</li>
+                                            <div class="row">
+                                                <div class="col-sm-5"><i class="fa fa-check"></i> Year: </div>
+                                                <div class="col-sm-7"><?php echo $rowz1['year'] ?></div>
+                                            </li>
                                         <li>
                                     </ul>
                                 </div>
                                 <div class="qualities-item">
                                     <ul>
                                         <li>
-											<div class="row">
-												<div class="col-sm-5"><i class="fa fa-check"></i> Hours: </div>
-												<div class="col-sm-7"><?php echo $rowz1['hours'] ?></div>
-											</li>
+                                            <div class="row">
+                                                <div class="col-sm-5"><i class="fa fa-check"></i> Hours: </div>
+                                                <div class="col-sm-7"><?php echo $rowz1['hours'] ?></div>
+                                            </li>
                                         <li>
                                         <li>
-											<div class="row">
-												<div class="col-sm-5"><i class="fa fa-check"></i> Price: </div>
-												<div class="col-sm-7"><?php echo $rowz1['price'] ?></div>
-											</li>
+                                            <div class="row">
+                                                <div class="col-sm-5"><i class="fa fa-check"></i> Price: </div>
+                                                <div class="col-sm-7"><?php echo $rowz1['price'] ?></div>
+                                            </li>
                                         <li>
                                         <li>
-											<div class="row">
-												<div class="col-sm-5"><i class="fa fa-check"></i> Location: </div>
-												<div class="col-sm-7"><?php echo $rowz1['location'] ?></div>
-											</li>
+                                            <div class="row">
+                                                <div class="col-sm-5"><i class="fa fa-check"></i> Location: </div>
+                                                <div class="col-sm-7"><?php echo $rowz1['location'] ?></div>
+                                            </li>
                                         <li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="or-qualities">
-								<h5 style="color:white;">Specifications</h5>
+                                <h5 style="color:white;">Specifications</h5>
                                 <div>
-								<?php
-									$specs= "specs_".$_REQUEST['l'];
-									echo $rowz1[$specs];
-								?>
-								</div>
+                                <?php
+                                    $specs= "specs_".$_REQUEST['l'];
+                                    echo $rowz1[$specs];
+                                ?>
+                                </div>
                             </div>
                             <div class="or-rating">
                                 <p><span>User Rating:</span> 4.5/5 ( 23 votes )</p>
@@ -371,11 +370,16 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                                 <a href="#"><i class="fa fa-youtube-play"></i></a>
                             </div>
                         </div>
-                        <div class="dt-comment">
-                            <h4>3 comment</h4>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="details-text">
+                        
+                    <div class="dt-comment">
+                            <h4 style="color:white;">3 comment</h4>
                             <div class="dc-item">
                                 <div class="dc-pic">
-                                    <img src="img/details/comment/comment-1.jpg" alt="">
+                                    <img src="assets/images/3.jpg" alt="">
                                 </div>
                                 <div class="dc-text">
                                     <h5>Brandon Kelley</h5>
@@ -388,7 +392,7 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                             </div>
                             <div class="dc-item reply-item">
                                 <div class="dc-pic">
-                                    <img src="img/details/comment/comment-2.jpg" alt="">
+                                    <img src="assets/images/2.jpg" alt="">
                                 </div>
                                 <div class="dc-text">
                                     <h5>Brandon Kelley</h5>
@@ -399,22 +403,9 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                                     <a href="#" class="reply-btn"><span>Reply</span></a>
                                 </div>
                             </div>
-                            <div class="dc-item">
-                                <div class="dc-pic">
-                                    <img src="img/details/comment/comment-3.jpg" alt="">
-                                </div>
-                                <div class="dc-text">
-                                    <h5>Matthew Nelson</h5>
-                                    <span class="c-date">15 Aug 2017</span>
-                                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                        adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-                                        dolore magnam.</p>
-                                    <a href="#" class="reply-btn"><span>Reply</span></a>
-                                </div>
-                            </div>
                         </div>
                         <div class="dt-leave-comment">
-                            <h4>Leave a comment</h4>
+                            <h4 style="color:white;">Leave a comment</h4>
                             <form action="#">
                                 <div class="input-list">
                                     <input type="text" placeholder="Name">
@@ -427,10 +418,12 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
+  <!-- Latest Preview Section End -->
+	<!-- Details Post Section Begin -->
+    
     <!-- Details Post Section End -->
     
         <?php include "page-footer.php";?>
@@ -439,4 +432,4 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 		Shadowbox.init();
 		</script>
 
-		<?php include "footer.php" ?>
+		<?php include "page-footer.php" ?>

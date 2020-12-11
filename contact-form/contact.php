@@ -36,9 +36,9 @@ if(isset($_POST['submit'])) {
 		}
 	}
 
-	$subject = "Mesaj contact Trampz LTD";
+    $subject = "Mesaj contact Trampz LTD";
 	$query = mysql_query ( " SELECT * FROM $xtable ");
-	$row = mysql_fetch_array($query);
+    $row = mysql_fetch_array($query);
 	
 	//If there is no error, send the email
 	if(!isset($hasError)) {
@@ -75,22 +75,14 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 <!-- Breadcrumb Section End -->
-<section class="contact-section spad">
+
+<section class="contact-section spad" style="padding:20px 0 60px 0;background:white;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-					<div class="row">
-						<div class="col-md-7 col-sm-12">
-							<div id="map"></div>
-						</div>
-						<div class="col-md-5 col-sm-12">
-							<p><?php echo $row[$continut]; ?></p>
-						</div>
-					</div>
-                    <div class="contact-text" style = "margin-top: 50px;">
+					<div class="contact-text" style = "margin-top: 50px;">
                         <div class="contact-title">
-                            <h3><?php echo $word['contactus_'.$lang];?></h3>
-                            <p>We are always waiting for your quotes</p>
+                            <p style="color:gray;">We are always waiting for your quotes</p>
                         </div>
                         <div class="contact-form">
                             <div class="dt-leave-comment">

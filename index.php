@@ -120,167 +120,129 @@
       <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next"><i class='fa fa-angle-left'></i></a>      
     </div>
   </section>
-  <!-- Hero Section End -->
-  <div class="whyschose">
-    <div class="container">
-      <div class="row">
-          <div class="col-md-7 offset-md-3">
-            <div class="title">
-                <h2>Why <strong class="black">choose us</strong></h2>
-                <span>Fastest repair service with best price!</span>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-<div class="choose_bg">
-    <div class="container">
-      <div class="white_bg">
-        <div class="row">
-            <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-              <div class="for_box">
-                  <i><img src="assets/icon/1.png"/></i>
-                  <h3>Data recovery</h3>
-                  <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
-              </div>
-            </dir>
-            <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-              <div class="for_box">
-                  <i><img src="assets/icon/2.png"/></i>
-                  <h3>Computer repair</h3>
-                  <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
-              </div>
-            </dir>
-            <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-              <div class="for_box">
-                  <i><img src="assets/icon/3.png"/></i>
-                  <h3>Mobile service</h3>
-                  <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
-              </div>
-            </dir>
-            <dir class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-              <div class="for_box">
-                  <i><img src="assets/icon/4.png"/></i>
-                  <h3>Network solutions</h3>
-                  <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
-              </div>
-            </dir>
-            <div class="col-md-12">
-              <a class="read-more">Read More</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- end CHOOSE -->
-
-<!-- service --> 
-
-      <!-- end service -->
+<!-- our product -->
 <div class="product">
-  <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-          <div class="title">
-              <h2>our <strong class="black">products</strong></h2>
-              <span>We package the products with best services to make you a happy customer.</span>
-          </div>
-        </div>
-    </div>
-  </div>
-</div>
-<div class="product-bg">
-  <div class="product-bg-white">
-  <div class="container">
-  <div class="row">
-        <div class="lp-slider owl-carousel">
-          <?php 
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                     <h2>latest <strong class="black">arrivals</strong></h2>
+                     <span>We package the latest arrivals with best services to make you a happy customer.</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="product-bg">
+         <div class="product-bg-white">
+         <div class="container">
+            <div class="row">
+            <?php 
               $query = mysql_query ( " SELECT * FROM $tab_produse where featured='1' LIMIT 5");
               while ($row = mysql_fetch_array($query)) {     
                   $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$row['id']."' ");
                   $row2 = mysql_fetch_array($query2);
-                  $while_parinte = $row['parinte'];
-                  $while_id = $row['id'];
-                  $while_l = $_REQUEST['l'];
-                  $rating = rand(65, 95);
-                  $disp_rating = $rating * 1;
-                  $rating_val = $rating / 10;
-          ?>
-          <div class="col-lg-3">
-            <div class="lp-item">
-              <div class="lp-pic set-bg" data-setbg="upload/<?php echo $row2['numefisier']; ?>">
-                <div class="review-loader">
-                  <div class="loader-circle-wrap">
-                    <div class="loader-circle">
-                      <span class="circle-progress" data-cpid="id<?php echo $row['id'];?>"
-                        data-cpvalue="<?php echo $disp_rating;?>" data-cpcolor="#ffc221"></span>
-                      <div class="review-point"><?php echo number_format($rating_val, 1);?></div>
-                    </div>
-                  </div>
+            ?>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+              <a href="product.php?cat=<?php echo $row['parinte']; ?>&id=<?php echo $row['id'] ?>&l=<?php echo $_REQUEST['l']; ?>">
+                <div class="product-box">
+                    <i><img src="upload/<?php echo $row2['numefisier']; ?>"/></i>
+                    <h3><?php echo $row['nume_en']; ?></h3>
+                    <span><i class="fa fa-money"></i> <?php echo $row['price']; ?> / <i class="fa fa-calendar-o"></i> <?php echo $row['year']; ?></span>
                 </div>
-              </div>
-              <div class="lp-text">
-                <h6><a
-                    href="product.php?cat=<?php echo $row['parinte']; ?>&id=<?php echo $row['id'] ?>&l=<?php echo $_REQUEST['l']; ?>"><?php echo $row['nume_en']; ?></a>
-                </h6>
-                <ul>
-                  <li><i class="fa fa-money"></i> <?php echo $row['price']; ?></li>
-                  <li><i class="fa fa-calendar-o"></i> <?php echo $row['year']; ?></li>
-                </ul>
-              </div>
+              </a>
             </div>
-          </div>
-          <?php 
-              }
-          ?>
-        </div>
-      </div>
-    
-    <div class="container">
-      <div class="yellow_bg">
-      <div class="row">
-          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-            <div class="yellow-box">
-                <h3>REQUEST A FREE QUOTE<i><img src="assets/icon/calll.png"/></i></h3>
+            <?php 
+                }
+          ?>              
+               </div>
+            </div>
+         </div>
+         <div class="Clients_bg_white">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="title">
+                        <h3>What Clients Say?</h3>
+                     </div>
+                  </div>
+               </div>
+               <div id="client_slider" class="carousel slide banner_Client" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#client_slider" data-slide-to="0" class="active"></li>
+          <li data-target="#client_slider" data-slide-to="1"></li>
+          <li data-target="#client_slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="carousel-caption text-bg">
+               <div class="img_bg">
+                  <i><img src="assets/images/lllll.png"/><span>Jone Due<br><strong class="date">12/02/2019</strong></span></i>
+                  
+               </div>
                 
-                <p>Get answers and advice from people you want it from.</p>
+                <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.<br>
+                You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
+                
+              </div>
             </div>
           </div>
-          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-            <div class="yellow-box">
-                <a href="#">Get  Quote</a>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="carousel-caption text-bg">
+                <div class="img_bg">
+                  <i><img src="assets/images/lllll.png"/><span>Jone Due<br><strong class="date">12/02/2019</strong></span></i>
+                  
+               </div>
+                <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.<br>
+                You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
+                
+              </div>
             </div>
           </div>
-      </div>
-    </div>  
-      <div class="row">
-        <div class="col-md-7 col-sm-12" style="margin:0px;  margin-top: 40px; margin-bottom: 40px;">
-          <div id="map"></div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="carousel-caption text-bg">
+                 <div class="img_bg">
+                  <i><img src="assets/images/lllll.png"/><span>Jone Due<br><strong class="date">12/02/2019</strong></span></i>
+                  
+               </div>
+                <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.<br>
+                You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
+               
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-5 col-sm-12" style="margin:0px;  margin-top: 40px;">
-        <?php
-        $query = mysql_query ( " SELECT * FROM trampz_pagini Where nume_en='Contact'");
-        $row1 = mysql_fetch_array($query);
         
-        ?>
-          <p><?php echo $row1[$continut]; ?></p>
-        </div>
-    </div>
-  </div>
-</div>
+      </div>
 
+            </div>
+         </div>
 
-<!-- end our product -->
-<!-- map -->
-  <!-- <div class="container">
-  <div class="col-md-12 col-sm-12 " style="margin:0px; padding:0px; margin-top: 40px;">
-							<div id="map"></div>
-						</div>
-  </div> -->
-  
-<!-- end map --> 
+         <div class="container">
+            <div class="yellow_bg">
+            <div class="row">
+               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                  <div class="yellow-box">
+                     <h3>REQUEST A FREE QUOTE<i><img src="assets/icon/calll.png"/></i></h3>
+                     
+                     <p>Get answers and advice from people you want it from.</p>
+                  </div>
+               </div>
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                  <div class="yellow-box">
+                     <a href="index.php?p=Contact&l=<?php echo $lang;?>">Get  Quote</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+      </div>
+<!-- service --> 
 
-
+<div id="map"></div>
   
   <?php
     }
@@ -519,7 +481,7 @@ if ($_REQUEST['p']=="search") {?>
         var uluru = {lat: 53.7841137, lng: -2.7898546};
         // The map, centered at Uluru
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 16, center: uluru});
+            document.getElementById('map'), {zoom: 15, center: uluru});
         // The marker, positioned at Uluru
         
         var marker = new google.maps.Marker({
@@ -538,7 +500,7 @@ if ($_REQUEST['p']=="search") {?>
 <style>
   		#map {
 			width: 100%;
-			height: 250px;
+			height: 450px;
 			background-color: grey;
 			border: 1px solid gray;
 		}

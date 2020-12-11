@@ -125,164 +125,93 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 <!-- Categories Grid Section Begin -->
 <section class="categories-grid-section spad" >
 <div class="product-bg">
-         <div class="product-bg-white">
-         <div class="container">
-            <div class="row">
-            <div class="col-lg-8 p-0">
-        <div class="row">
-          <?php
-            if ($_REQUEST['cat']<>'all') { 
-              $queryp = mysql_query ( " SELECT * FROM $tab_produse where parinte = '".$_REQUEST['cat']."' LIMIT ".$page_offset.", 10");
-              while ( $rowp = mysql_fetch_array($queryp) ) { 
-                $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$rowp['id']."' ");
-                $row2 = mysql_fetch_array($query2);
-                $while_cat = $_REQUEST['cat'];
-                $while_id = $rowp['id'];
-                $while_l = $_REQUEST['l'];
-          ?>
-            <div class='col-lg-6'>
-              <div class='cg-item'>
-                <div class='cg-pic set-bg' data-setbg="upload/<?php echo $row2['numefisier'] ?>">
-                    <div class='label'><span><?php echo $rowp['model'] ?></span></div>
-                </div>
-                <div class='cg-text'>
-                    <h5><a href='product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>'><?php echo $rowp['nume_en']; ?></a></h5>
-                    <ul>
-                      <li>by <span><?php echo $rowp['make'] ?></span></li>
-                      <li><i class='fa fa-money'></i><?php echo $rowp['price'] ?> &pound;</li>
-                      <li><i class='fa fa-calendar-o'></i><?php echo $rowp['year'] ?></li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-          <?php } 
-          } else {
-            $queryp = mysql_query ( " SELECT * FROM $tab_produse ORDER BY id LIMIT ".$page_offset.", 10");
-            while ( $rowp = mysql_fetch_array($queryp) ) {
-              $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$rowp['id']."' ");
-              $row2 = mysql_fetch_array($query2);
-              $while_cat = $_REQUEST['cat'];
-              $while_id = $rowp['id'];
-              $while_l = $_REQUEST['l'];
-          ?>
-            <div class='col-lg-6'>
-              <div class='cg-item'>
-                <div class='cg-pic set-bg' data-setbg="upload/<?php echo $row2['numefisier'] ?>">
-                    <div class='label'><span><?php echo $rowp['model'] ?></span></div>
-                </div>
-                <div class='cg-text'>
-                    <h5><a href='product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>'><?php echo $rowp['nume_en']; ?></a></h5>
-                    <ul>
-                      <li>by <span><?php echo $rowp['make'] ?></span></li>
-                      <li><i class='fa fa-money'></i><?php echo $rowp['price'] ?> &pound;</li>
-                      <li><i class='fa fa-calendar-o'></i><?php echo $rowp['year'] ?></li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-          <?php }
-          }	
-          ?>
-        </div>
-        <div class="pagination-item" style="float:right; ">
-          <?php
-            if($page == 1) {
-              echo "<a href='#'>Previous</a>";
-            } else {
-              $j = $page - 1;
-              echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$j.'">Previous</a>';
-            }
-            if($_REQUEST['cat'] <> 'all') {
-              $page_query = mysql_query("SELECT COUNT(id) AS count FROM ".$tab_produse." WHERE parinte='".$_REQUEST['cat']."'");
-            } else {
-              $page_query = mysql_query("SELECT COUNT(id) AS count FROM ".$tab_produse);
-            }
-            $total_num = mysql_fetch_array($page_query);
-            $total_page = floor($total_num['count'] / 10) + 1;
-            for($i = 1; $i <= $total_page; $i++){
-              echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$i.'">'.$i.'</a>';
-            }
-            if($total_page == $page) {
-              echo "<a href='#'>Next</a>";
-            } else {
-              $j = $page + 1;
-              echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$j.'">Next</a>';
-            }
-          ?>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-7 p-0">
-        <div class="sidebar-option">
-        <div class="social-media">
-            <div class="section-title">
-              <h5>Social media</h5>
-            </div>
-            <ul>
-              <li>
-                <div class="sm-icon"><i class="fa fa-facebook"></i></div>
-                <span>Facebook</span>
-                <div class="follow">1,2k Follow</div>
-              </li>
-              <li>
-                <div class="sm-icon"><i class="fa fa-twitter"></i></div>
-                <span>Twitter</span>
-                <div class="follow">1,2k Follow</div>
-              </li>
-              <li>
-                <div class="sm-icon"><i class="fa fa-youtube-play"></i></div>
-                <span>Youtube</span>
-                <div class="follow">2,3k Subs</div>
-              </li>
-              <li>
-                <div class="sm-icon"><i class="fa fa-instagram"></i></div>
-                <span>Instagram</span>
-                <div class="follow">2,6k Follow</div>
-              </li>
-            </ul>
-          </div>
-          <div class="best-of-post">
-            <div class="section-title">
-              <h5>Best of</h5>
-            </div>
-            <?php 
-            $rating = 100;
-            $queryp = mysql_query ( " SELECT * FROM $tab_produse ORDER BY id LIMIT 0, 5");
-            while ( $rowp = mysql_fetch_array($queryp) ) {
-              $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$rowp['id']."' ");
-              $row2 = mysql_fetch_array($query2);
-              $while_cat = $_REQUEST['cat'];
-              $while_id = $rowp['id'];
-              $while_l = $_REQUEST['l'];
-              $rating = $rating - 3;
-              $show_rating = rand($rating, $rating + 3);
-              $pshow_rating = $show_rating / 10;
-            ?>
-              <div class="bp-item">
-                <div class="bp-loader">
-                  <div class="loader-circle-wrap">
-                    <div class="loader-circle">
-                      <span class="circle-progress-1" data-cpid="id-1" data-cpvalue="<?php echo $show_rating;?>" data-cpcolor="#ffc221"></span>
-                      <div class="review-point"><?php echo $pshow_rating;?></div>
-                    </div>
+          <div class="product-bg-white">
+            <div class="container">
+              <div class="row">
+                <?php
+                  if ($_REQUEST['cat']<>'all') { 
+                    $queryp = mysql_query ( " SELECT * FROM $tab_produse where parinte = '".$_REQUEST['cat']."' LIMIT ".$page_offset.", 10");
+                    while ( $rowp = mysql_fetch_array($queryp) ) { 
+                      $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$rowp['id']."' ");
+                      $row2 = mysql_fetch_array($query2);
+                      $while_cat = $_REQUEST['cat'];
+                      $while_id = $rowp['id'];
+                      $while_l = $_REQUEST['l'];
+                ?>
+                  <div class='col-xl-3 col-lg-4 col-md-6 col-sm-12'>
+                    <a href='product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>'>
+                      <div class='cg-item'>
+                        <div class='cg-pic set-bg' data-setbg="upload/<?php echo $row2['numefisier'] ?>">
+                            <div class='label'><span><?php echo $rowp['model'] ?></span></div>
+                        </div>
+                        <div class='cg-text'>
+                            <h5><a href='product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>'><?php echo $rowp['nume_en']; ?></a></h5>
+                            <ul style="margin-bottom: 0;">
+                              <li>by <span><?php echo $rowp['make'] ?></span></li>
+                              <li><i class='fa fa-money'></i><?php echo $rowp['price'] ?> &pound;</li>
+                              <li><i class='fa fa-calendar-o'></i><?php echo $rowp['year'] ?></li>
+                            </ul>
+                        </div>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                <div class="bp-text">
-                  <h6><a href="product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>"><?php echo $rowp['nume_en']; ?></a></h6>
-                  <ul>
-                    <li>by <span><?php echo $rowp['make'] ?></span></li>
-                    <li><i class='fa fa-money'></i><?php echo $rowp['price'] ?> &pound;</li>
-                    <li><i class='fa fa-calendar-o'></i><?php echo $rowp['year'] ?></li>
-                  </ul>
-                </div>
+                <?php } 
+                } else {
+                  $queryp = mysql_query ( " SELECT * FROM $tab_produse ORDER BY id LIMIT ".$page_offset.", 10");
+                  while ( $rowp = mysql_fetch_array($queryp) ) {
+                    $query2 = mysql_query ( " SELECT * FROM $tab_fisiere where tip = '".$rowp['id']."' ");
+                    $row2 = mysql_fetch_array($query2);
+                    $while_cat = $_REQUEST['cat'];
+                    $while_id = $rowp['id'];
+                    $while_l = $_REQUEST['l'];
+                ?>
+                  <div class='col-xl-3 col-lg-4 col-md-6 col-sm-12'>
+                    <a href='product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>'>
+                      <div class='cg-item'>
+                        <div class='cg-pic set-bg' data-setbg="upload/<?php echo $row2['numefisier'] ?>">
+                            <div class='label'><span><?php echo $rowp['model'] ?></span></div>
+                        </div>
+                        <div class='cg-text'>
+                            <h5><a href='product.php?cat=<?php echo $cat; ?>&id=<?php echo $while_id ?>&l=<?php echo $while_l; ?>'><?php echo $rowp['nume_en']; ?></a></h5>
+                            <ul style="margin-bottom: 0;">
+                              <li>by <span><?php echo $rowp['make'] ?></span></li>
+                              <li><i class='fa fa-money'></i><?php echo $rowp['price'] ?> &pound;</li>
+                              <li><i class='fa fa-calendar-o'></i><?php echo $rowp['year'] ?></li>
+                            </ul>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                <?php }
+                }	
+                ?>
               </div>
-            <?php
-            }
-            ?>
-          </div>
-        </div>
-      </div>
-              
-               </div>
+              <div class="pagination-item" style="float:right; ">
+                <?php
+                  if($page == 1) {
+                    echo "<a href='#'>Previous</a>";
+                  } else {
+                    $j = $page - 1;
+                    echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$j.'">Previous</a>';
+                  }
+                  if($_REQUEST['cat'] <> 'all') {
+                    $page_query = mysql_query("SELECT COUNT(id) AS count FROM ".$tab_produse." WHERE parinte='".$_REQUEST['cat']."'");
+                  } else {
+                    $page_query = mysql_query("SELECT COUNT(id) AS count FROM ".$tab_produse);
+                  }
+                  $total_num = mysql_fetch_array($page_query);
+                  $total_page = floor($total_num['count'] / 10) + 1;
+                  for($i = 1; $i <= $total_page; $i++){
+                    echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$i.'">'.$i.'</a>';
+                  }
+                  if($total_page == $page) {
+                    echo "<a href='#'>Next</a>";
+                  } else {
+                    $j = $page + 1;
+                    echo '<a href="products.php?cat='.$_REQUEST['cat'].'&l='.$_REQUEST['l'].'&page='.$j.'">Next</a>';
+                  }
+                ?>
+              </div>
             </div>
          </div>
 </section>
