@@ -3988,7 +3988,6 @@ html {
 }
 
 body {
-	margin-left: 28px;
 	color: #666666;
 	font-size: 14px;
 	font-family: 'poppins', sans-serif;
@@ -4971,7 +4970,7 @@ nav.main-menu {
 	font-size: 16px;
 	display: block;
 	font-weight: 500;
-	color: #010005;
+	color: #363636;
 	text-transform: uppercase;
 }
 
@@ -5819,6 +5818,17 @@ margin-top: 40px;
     padding-bottom: 8px;
 }
 
+.product .title h3 {
+	font-size: 30px;
+	line-height: 35px;
+	color:#ffc221;
+	font-weight: 500;
+	text-transform: uppercase;
+    margin-bottom: 27px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
 .product .title h2:after {
 	position: absolute;
     border-bottom: #000 solid 10px;
@@ -5850,7 +5860,7 @@ margin-top: 20px;
  	text-align: center;
  	margin-bottom: 30px;
  	padding: 20px 25px;
-
+	min-height: 300px;
  }
  .product-box img {
 	 border: 4px solid #fdc24f;

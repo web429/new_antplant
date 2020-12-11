@@ -432,4 +432,4 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
 		Shadowbox.init();
 		</script>
 
-		<?php include "page-footer.php" ?>
+		<?php include "footer.php" ?>
