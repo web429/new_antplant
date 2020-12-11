@@ -82,49 +82,54 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
     <div class="loader"></div>
   </div>
 <!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg" style = "margin-top: 35px">
-  
-<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="breadcrumb-text">
-            <h3 class="text-center"><?php echo $_REQUEST['p'];?></h3>
-            <div class="bt-option">
-              <a href="index.php">Home</a>
-              <a href="#"><?php echo $_REQUEST['p'];?></a>
-              <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1">
-                <?php $queryz = mysql_query( " SELECT * FROM $tab_produse ");
-              ?>
-                Stocklist (<?php echo mysql_num_rows($queryz) ?>) >
-              </a>
-              <?php if ($_REQUEST['cat']<>'all') { ?>
-                <a href="#">
-                  <?php $queryz = mysql_query( " SELECT * FROM $tab_produse where parinte='".$_REQUEST['cat']."'");
-                ?>
-                  <?php
-                $queryz1 = mysql_query ( " SELECT * FROM $tab_pagini where pagina_id='".$_REQUEST['cat']."' ");
-                $rowz1 = mysql_fetch_array($queryz1);
-                $nume = "nume_".$_REQUEST['l'];
-                echo $rowz1[$nume];
-              ?>
-                (<?php echo mysql_num_rows($queryz) ?>) >
-              </a>
-              <?php } ?>
-                <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1" style="float:right;">View all
-                  MACHINES</a>
+<div class="brand_color" style="margin-top:27px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage" style="padding-bottom:20px;">
+                        <h2><?php echo $_REQUEST['p'];?></h2>
+                    </div>
+                    <div class="bt-option" style="padding-bottom:20px;">
+                      <a href="index.php">Home</a> >
+                      <a href="#"><?php echo $_REQUEST['p'];?></a> >
+                      <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1">
+                        <?php $queryz = mysql_query( " SELECT * FROM $tab_produse ");
+                      ?>
+                        Stocklist (<?php echo mysql_num_rows($queryz) ?>) >
+                      </a>
+                      <?php if ($_REQUEST['cat']<>'all') { ?>
+                        <a href="#">
+                          <?php $queryz = mysql_query( " SELECT * FROM $tab_produse where parinte='".$_REQUEST['cat']."'");
+                        ?>
+                          <?php
+                        $queryz1 = mysql_query ( " SELECT * FROM $tab_pagini where pagina_id='".$_REQUEST['cat']."' ");
+                        $rowz1 = mysql_fetch_array($queryz1);
+                        $nume = "nume_".$_REQUEST['l'];
+                        echo $rowz1[$nume];
+                      ?>
+                        (<?php echo mysql_num_rows($queryz) ?>) >
+                      </a>
+                      <?php } ?>
+                        <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1" style="float:right;">View all
+                          MACHINES</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
 <!-- Breadcrumb Section End -->
-
+<?php 
+  if ($_REQUEST['cat'] <> 'all') {
+    $queryp = mysql_query ( " SELECT COUNT(parinte) AS count_num FROM $tab_produse where parinte = '".$_REQUEST['cat']."' LIMIT ".$page_offset.", 10");
+    $count_result = mysql_fetch_array($queryp);
+  } else {
+    $queryp = mysql_query ( " SELECT COUNT(id) AS count_num FROM $tab_produse ORDER BY id LIMIT ".$page_offset.", 10");
+    $count_result = mysql_fetch_array($queryp);
+  }
+?>
 <!-- Categories Grid Section Begin -->
 <section class="categories-grid-section spad" >
-<div class="product-bg">
+<div class="product-bg" style="<?php echo $count_result['count_num'] < 5 ? 'background-size:100% auto;' : 'background-size:auto 100%;';?>">
           <div class="product-bg-white">
             <div class="container">
               <div class="row">

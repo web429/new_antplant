@@ -136,52 +136,48 @@ echo "<meta name=\"copyright\" content=\"".$row['pagina_copyright']."\" />\n";
   <div id="preloder">
     <div class="loader"></div>
   </div>
-  
-	<!-- Breadcrumb Section Begin -->
-	<section class="breadcrumb-section set-bg spad" data-setbg="assets/img/top-image-old.jpg" style = " margin-top: 35px;">
-		<div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.5);padding:100px 0;">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-				<div class="breadcrumb-text">
-					<?php
+  <div class="brand_color" style="margin-top:27px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage" style="padding-bottom:20px;">
+                    <?php
 						$queryz1 = mysql_query ( " SELECT * FROM $tab_produse where id='".$_REQUEST['id']."' ");
 						$rowz1 = mysql_fetch_array($queryz1);
 					?>
-					<h3 class="text-center"><?php echo $rowz1['nume_en'];?></h3>
-					<div class="bt-option">
-					<a href="index.php">Home ></a>
-					<a class="crumb" href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1">
-					<?php $queryz = mysql_query( " SELECT * FROM $tab_produse ");
-						?>
-					Stocklist (<?php echo mysql_num_rows($queryz) ?>) >
-					</a>
-					<a class="crumb" href="products.php?cat=<?php echo $_REQUEST['cat'] ?>&l=<?php echo $_REQUEST['l'] ?>&page=1"> 
-					<?php $queryz = mysql_query( " SELECT * FROM $tab_produse where parinte='".$_REQUEST['cat']."'");
-						?>
-					<?php
-						$queryz1 = mysql_query ( " SELECT * FROM $tab_pagini where pagina_id='".$_REQUEST['cat']."' ");
-						$rowz1 = mysql_fetch_array($queryz1);
-						$nume = "nume_".$_REQUEST['l'];
-						echo $rowz1[$nume];
-					?>
-					(<?php echo mysql_num_rows($queryz) ?>) >
-					</a>
-					<a class="crumb" href="product.php?id=<?php echo $_REQUEST['id'] ?>&l=<?php echo $_REQUEST['l'] ?>&cat=<?php echo $_REQUEST['cat']?>">
-					<?php
-						$queryz1 = mysql_query ( " SELECT * FROM $tab_produse where id='".$_REQUEST['id']."' ");
-						$rowz1 = mysql_fetch_array($queryz1);
-						echo $rowz1['nume_en'];
-					?>
-					</a>
-					<a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1" style="float:right;">View all MACHINES</a>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
-	<!-- Breadcrumb Section End -->
+                        <h2><?php echo $rowz1['nume_en'];?></h2>
+                    </div>
+                    <div class="bt-option" style="padding-bottom:20px;">
+                        <a href="index.php">Home ></a>
+                        <a class="crumb" href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1">
+                        <?php $queryz = mysql_query( " SELECT * FROM $tab_produse ");
+                            ?>
+                        Stocklist (<?php echo mysql_num_rows($queryz) ?>) >
+                        </a>
+                        <a class="crumb" href="products.php?cat=<?php echo $_REQUEST['cat'] ?>&l=<?php echo $_REQUEST['l'] ?>&page=1"> 
+                        <?php $queryz = mysql_query( " SELECT * FROM $tab_produse where parinte='".$_REQUEST['cat']."'");
+                            ?>
+                        <?php
+                            $queryz1 = mysql_query ( " SELECT * FROM $tab_pagini where pagina_id='".$_REQUEST['cat']."' ");
+                            $rowz1 = mysql_fetch_array($queryz1);
+                            $nume = "nume_".$_REQUEST['l'];
+                            echo $rowz1[$nume];
+                        ?>
+                        (<?php echo mysql_num_rows($queryz) ?>) >
+                        </a>
+                        <a class="crumb" href="product.php?id=<?php echo $_REQUEST['id'] ?>&l=<?php echo $_REQUEST['l'] ?>&cat=<?php echo $_REQUEST['cat']?>">
+                        <?php
+                            $queryz1 = mysql_query ( " SELECT * FROM $tab_produse where id='".$_REQUEST['id']."' ");
+                            $rowz1 = mysql_fetch_array($queryz1);
+                            echo $rowz1['nume_en'];
+                        ?>
+                        </a>
+                        <a href="products.php?cat=all&l=<?php echo $_REQUEST['l'] ?>&page=1" style="float:right;">View all MACHINES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Latest Preview Section Begin -->
     <section class="latest-preview-section">
